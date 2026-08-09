@@ -1,0 +1,163 @@
+<meta charset="utf-8">
+<title>ScoutIQ — Setup Guide</title>
+<style>
+  :root {
+    --bg: #ffffff; --fg: #1b1f24; --muted: #5b6672; --line: #e3e7ec;
+    --code-bg: #f5f7f9; --accent: #1f6feb; --warn-bg: #fff8e6; --warn-line: #e0b94a;
+    --ok-bg: #eefaf1; --ok-line: #4caf7d;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --bg: #14181d; --fg: #e6eaef; --muted: #9aa6b2; --line: #2a3139;
+      --code-bg: #1c2229; --accent: #6ea8ff; --warn-bg: #2c2618; --warn-line: #8a7328;
+      --ok-bg: #16261d; --ok-line: #2f7d55;
+    }
+  }
+  * { box-sizing: border-box; }
+  body {
+    background: var(--bg); color: var(--fg); margin: 0 auto; padding: 40px 24px 80px;
+    max-width: 820px; line-height: 1.65;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  }
+  h1 { font-size: 1.9rem; margin: 0 0 6px; letter-spacing: -0.02em; }
+  h2 { font-size: 1.25rem; margin: 44px 0 10px; padding-top: 18px; border-top: 1px solid var(--line); }
+  h3 { font-size: 1.02rem; margin: 26px 0 8px; }
+  p, li { font-size: 0.98rem; }
+  .lede { color: var(--muted); font-size: 1.05rem; margin-bottom: 4px; }
+  code {
+    background: var(--code-bg); padding: 2px 6px; border-radius: 4px;
+    font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; font-size: 0.88em;
+  }
+  pre {
+    background: var(--code-bg); border: 1px solid var(--line); border-radius: 8px;
+    padding: 14px 16px; overflow-x: auto; font-size: 0.86rem; line-height: 1.5;
+  }
+  pre code { background: none; padding: 0; }
+  table { border-collapse: collapse; width: 100%; margin: 14px 0; font-size: 0.9rem; display: block; overflow-x: auto; }
+  th, td { border: 1px solid var(--line); padding: 8px 10px; text-align: left; white-space: nowrap; }
+  th { background: var(--code-bg); font-weight: 600; }
+  .note, .warn {
+    border-radius: 8px; padding: 14px 16px; margin: 18px 0; font-size: 0.93rem;
+    border: 1px solid var(--warn-line); background: var(--warn-bg);
+  }
+  .note { border-color: var(--ok-line); background: var(--ok-bg); }
+  .step { font-weight: 600; color: var(--accent); }
+  ol > li { margin-bottom: 8px; }
+  .foot { margin-top: 50px; padding-top: 18px; border-top: 1px solid var(--line); color: var(--muted); font-size: 0.87rem; }
+</style>
+
+<h1>ScoutIQ — Setup Guide</h1>
+<p class="lede">How to run the app and check the Football Manager 26 league parser on your own save files.</p>
+
+<div class="note">
+  <strong>You do not need an account, a server, or an internet connection to use the parser.</strong>
+  Save files are only ever read — never modified, renamed or moved.
+</div>
+
+<h2>1. What is in this folder</h2>
+<table>
+  <tr><th>Folder</th><th>What it is</th></tr>
+  <tr><td><code>scoutiq/</code></td><td>The application: Rust parser, Tauri desktop shell, React interface</td></tr>
+  <tr><td><code>fm26-research/</code></td><td>Technical notes on the save format (<code>FINDINGS.md</code>) and the research tool used to discover it</td></tr>
+  <tr><td><code>START-HERE.html</code></td><td>This guide</td></tr>
+</table>
+
+<p>Your <code>.fm</code> save files are <strong>not</strong> included — they are several gigabytes. You point the app at them from your own computer.</p>
+
+<h2>2. Install the two prerequisites</h2>
+<p>These are one-time installations. Both are free and official.</p>
+
+<h3>Node.js (version 20 or newer)</h3>
+<p>Download the LTS version from <code>nodejs.org</code> and install it.</p>
+
+<h3>Rust</h3>
+<p>Go to <code>rustup.rs</code> and follow the one-line instruction for your system.</p>
+
+<h3>System build tools</h3>
+<ul>
+  <li><strong>macOS</strong> — open Terminal and run <code>xcode-select --install</code></li>
+  <li><strong>Windows</strong> — install “Microsoft Visual Studio C++ Build Tools” and “WebView2” (Windows 11 already has WebView2)</li>
+  <li><strong>Linux</strong> — install <code>libwebkit2gtk-4.1-dev</code>, <code>build-essential</code>, <code>libssl-dev</code>, <code>libayatana-appindicator3-dev</code>, <code>librsvg2-dev</code></li>
+</ul>
+
+<p>To confirm everything is ready, open a terminal and run:</p>
+<pre><code>node --version
+cargo --version</code></pre>
+<p>Both should print a version number.</p>
+
+<h2>3. Start the app</h2>
+<p>Open a terminal, go into the <code>scoutiq</code> folder, and run these two commands:</p>
+<pre><code>npm install
+npm run tauri dev</code></pre>
+
+<p><span class="step">First run takes a while</span> — Rust compiles the parser from source, which can take 5–15 minutes. Later runs start in seconds.</p>
+<p>The ScoutIQ window opens by itself. Use <strong>Open save file</strong> to load a <code>.fm</code> file. The manager, club and current league appear once the save has been read (about 1–3 seconds, depending on save size).</p>
+
+<h2>4. Build an installable application</h2>
+<p>To produce a normal installer you can double-click:</p>
+<pre><code>npm run tauri build</code></pre>
+<p>The finished file appears under <code>scoutiq/src-tauri/target/release/bundle/</code> — a <code>.dmg</code> on macOS, an <code>.msi</code> on Windows, a <code>.deb</code> or <code>.AppImage</code> on Linux.</p>
+
+<h2>5. Check the parser against your saves</h2>
+<p>This runs the automated tests, including the eight saves you supplied.</p>
+
+<p><span class="step">Step 1.</span> Put your <code>.fm</code> files together in one folder.</p>
+<p><span class="step">Step 2.</span> From inside <code>scoutiq/src-tauri</code>, run the command for your system, replacing the path with your own folder:</p>
+
+<p>macOS / Linux:</p>
+<pre><code>SCOUTIQ_TEST_SAVES=/path/to/your/saves cargo test --release --lib</code></pre>
+
+<p>Windows (PowerShell):</p>
+<pre><code>$env:SCOUTIQ_TEST_SAVES="C:\path\to\your\saves"
+cargo test --release --lib</code></pre>
+
+<p>You should see <code>test result: ok. 95 passed; 0 failed</code>.</p>
+
+<p>To inspect one save in detail, build the inspection tool once:</p>
+<pre><code>cargo build --release --features research-tools --bin fm_probe</code></pre>
+<p>then run it on any save:</p>
+<pre><code>./target/release/fm_probe --deep "/path/to/your save.fm"</code></pre>
+
+<h2>6. Expected results for the supplied saves</h2>
+<table>
+  <tr><th>Save</th><th>Club ID</th><th>League ID</th><th>Shown as</th></tr>
+  <tr><td>Bayer Leverkusen</td><td>901</td><td>22</td><td>DBL</td></tr>
+  <tr><td>MSV Duisburg</td><td>933</td><td>23</td><td>2. Bundesliga</td></tr>
+  <tr><td>VVV-Venlo</td><td>1043</td><td>30</td><td>Eerste Divisie</td></tr>
+  <tr><td>Salford City</td><td>5103842</td><td>14</td><td>EFL League Two</td></tr>
+  <tr><td>TSV 1860 München</td><td>955</td><td>91107111</td><td>Regionalliga Bayern</td></tr>
+  <tr><td>Macclesfield (during the season)</td><td>2000095665</td><td>13</td><td>EFL League One</td></tr>
+  <tr><td>Macclesfield (promotion just won)</td><td>2000095665</td><td>13</td><td>EFL League One</td></tr>
+  <tr><td>Macclesfield (new season prepared)</td><td>2000095665</td><td>12</td><td>EFL Championship</td></tr>
+</table>
+
+<div class="warn">
+  <p><strong>Two results worth explaining in advance.</strong></p>
+  <p><strong>Bayer Leverkusen shows “DBL”, not “Bundesliga”.</strong> The league itself is identified correctly — it is competition 22, the German top division. Football Manager only writes a competition’s name into a save when that name differs from the installed database, and in your three German saves competition 22 carries only the short code <code>DBL</code>. The full word “Bundesliga” is not present anywhere in those files. If you send a name list exported from the FM26 editor, it will display “Bundesliga” with no change to the program.</p>
+  <p><strong>MSV Duisburg comes out as 2. Bundesliga, not Bundesliga.</strong> The save you supplied stores competition 23 for that club, and the save itself names 23 “2. Bundesliga”. The parser reports what the file actually contains rather than overriding it. Please confirm whether that matches the save you intended to send.</p>
+</div>
+
+<h2>7. About the Macclesfield promotion</h2>
+<p>The three Macclesfield saves show the promotion handled the way Football Manager itself handles it:</p>
+<pre><code>during the season      → EFL League One   (13)
+promotion just won     → EFL League One   (13)
+new season prepared    → EFL Championship (12)</code></pre>
+<p>The middle save still says League One because Football Manager does not move a club into its new division at the moment promotion is secured — it does so at the season rollover. The parser reports the division the save actually holds, rather than the division you would expect.</p>
+
+<h2>8. If something goes wrong</h2>
+<table>
+  <tr><th>Problem</th><th>What to do</th></tr>
+  <tr><td><code>cargo: command not found</code></td><td>Rust is not installed, or the terminal needs restarting after installing it</td></tr>
+  <tr><td>First build seems frozen</td><td>It is compiling. Leave it 15 minutes before worrying</td></tr>
+  <tr><td>The window is blank</td><td>Close it, run <code>npm install</code> again, then <code>npm run tauri dev</code></td></tr>
+  <tr><td>Tests say <code>SKIPPED</code></td><td><code>SCOUTIQ_TEST_SAVES</code> is not pointing at a folder containing <code>.fm</code> files</td></tr>
+  <tr><td>A league shows as <code>Competition 12345</code></td><td>The ID was found correctly but the save contains no name for it. This is expected, not a failure</td></tr>
+</table>
+
+<h2>9. Optional: cloud login</h2>
+<p>The app runs fully without it. Account features stay switched off unless a <code>.env</code> file with Supabase keys is placed in the <code>scoutiq</code> folder — see <code>.env.example</code> for the format. No credentials are included in this package, and nothing is sent anywhere without them.</p>
+
+<p class="foot">
+  Technical detail on the discovered save-file structure is in <code>fm26-research/FINDINGS.md</code>.
+  Developer-level build and validation commands are in <code>scoutiq/README.md</code>.
+</p>
