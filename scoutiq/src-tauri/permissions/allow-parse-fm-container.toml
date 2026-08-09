@@ -1,0 +1,4 @@
+[[permission]]
+identifier = "allow-parse-fm-container"
+description = "Erlaubt das Parsen der FM26-Container-Frames (nur Lesen)."
+commands.allow = ["parse_fm_container"]

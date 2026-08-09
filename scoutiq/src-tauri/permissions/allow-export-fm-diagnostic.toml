@@ -1,0 +1,4 @@
+[[permission]]
+identifier = "allow-export-fm-diagnostic"
+description = "Erlaubt den Export forensischer Diagnose-JSON (ohne Full-Save)."
+commands.allow = ["export_fm_diagnostic"]

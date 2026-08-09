@@ -1,0 +1,4 @@
+[[permission]]
+identifier = "allow-probe-fm-value"
+description = "Erlaubt die forensische Suche nach bekannten Werten in einem FM-Spielstand (nur Lesen)."
+commands.allow = ["probe_fm_value"]

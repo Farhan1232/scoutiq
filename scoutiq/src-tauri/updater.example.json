@@ -1,0 +1,26 @@
+{
+  "$schema": "https://schema.tauri.app/config/2",
+  "_comment": "Scaffold only — do NOT merge into tauri.conf.json until updates are intentionally enabled.",
+  "bundle": {
+    "createUpdaterArtifacts": true
+  },
+  "plugins": {
+    "updater": {
+      "pubkey": "REPLACE_WITH_TAURI_UPDATER_PUBLIC_KEY",
+      "endpoints": [
+        "https://releases.example.com/scoutiq/{{target}}/{{arch}}/{{current_version}}"
+      ]
+    }
+  },
+  "enableChecklist": [
+    "Generate keypair: npm run tauri signer generate -w ~/.tauri/scoutiq.key",
+    "Paste public key into plugins.updater.pubkey",
+    "Host signed update manifests at endpoints",
+    "Add tauri-plugin-updater to Cargo.toml (desktop target)",
+    "Register plugin in src-tauri/src/lib.rs",
+    "Merge permissions from updater.capability.example.json into capabilities/default.json",
+    "npm i @tauri-apps/plugin-updater @tauri-apps/plugin-process",
+    "Set UPDATES_ENABLED=true in src/updates/config.ts",
+    "Implement check() call in src/updates/providers/tauriProvider.ts"
+  ]
+}

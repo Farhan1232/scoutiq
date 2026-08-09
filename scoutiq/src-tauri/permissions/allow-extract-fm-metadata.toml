@@ -1,0 +1,4 @@
+[[permission]]
+identifier = "allow-extract-fm-metadata"
+description = "Erlaubt die read-only Extraktion von FM-Spielstand-Metadaten."
+commands.allow = ["extract_fm_metadata"]

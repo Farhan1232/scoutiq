@@ -1,0 +1,4 @@
+[[permission]]
+identifier = "allow-get-calibrating-metadata"
+description = "Erlaubt das Abrufen des Kalibrierungs-Status für Metadaten."
+commands.allow = ["get_calibrating_metadata"]

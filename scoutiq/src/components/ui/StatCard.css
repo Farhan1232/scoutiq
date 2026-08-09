@@ -1,0 +1,91 @@
+.stat-card {
+  position: relative;
+  min-width: 0;
+  padding: clamp(14px, 1.2vw, 20px);
+  border-radius: var(--radius-lg);
+  background: var(--card-sheen), var(--bg-elevated);
+  border: 1px solid var(--border-subtle);
+  box-shadow: var(--shadow-sm);
+  overflow: hidden;
+  animation: fade-up 420ms var(--ease-out) both;
+  transition:
+    border-color var(--duration) var(--ease-out),
+    transform var(--duration) var(--ease-out),
+    background var(--duration) var(--ease-out),
+    box-shadow var(--duration) var(--ease-out);
+}
+
+.stat-card::before {
+  content: "";
+  position: absolute;
+  inset: 0 auto auto 0;
+  width: 100%;
+  height: 1px;
+  background: var(--accent-edge);
+  opacity: 0;
+  transition: opacity var(--duration) var(--ease-out);
+}
+
+.stat-card:hover {
+  border-color: var(--border-strong);
+  transform: translateY(-2px);
+  background: var(--card-hover-wash), var(--bg-surface);
+  box-shadow: var(--shadow-md);
+}
+
+.stat-card:hover::before {
+  opacity: 1;
+}
+
+.stat-card__header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  margin-bottom: 14px;
+}
+
+.stat-card__label {
+  color: var(--text-secondary);
+  font-size: 13px;
+  font-weight: 500;
+}
+
+.stat-card__delta {
+  display: inline-flex;
+  align-items: center;
+  gap: 2px;
+  font-family: var(--font-mono);
+  font-size: 11px;
+  font-weight: 500;
+}
+
+.stat-card__delta--up {
+  color: var(--accent);
+}
+
+.stat-card__delta--down {
+  color: var(--danger);
+}
+
+.stat-card__delta--flat {
+  color: var(--text-muted);
+}
+
+.stat-card__value {
+  font-family: var(--font-display);
+  font-size: clamp(1.35rem, 1.15rem + 0.55vw, 1.75rem);
+  font-weight: 600;
+  letter-spacing: -0.03em;
+  line-height: 1.15;
+  margin-bottom: 8px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.stat-card__caption {
+  margin: 0;
+  color: var(--text-muted);
+  font-size: 12px;
+}

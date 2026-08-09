@@ -1,0 +1,44 @@
+.placeholder {
+  width: 100%;
+  max-width: var(--content-max);
+  margin: 0 auto;
+  min-height: calc(100% - 24px);
+  display: grid;
+  place-items: center;
+  animation: fade-up 360ms var(--ease-out) both;
+}
+
+.placeholder__card {
+  width: min(440px, 100%);
+  text-align: center;
+  padding: clamp(28px, 3vw, 44px) clamp(20px, 2.4vw, 32px);
+  border-radius: var(--radius-xl);
+  background: var(--placeholder-glow), var(--bg-elevated);
+  border: 1px solid var(--border-subtle);
+}
+
+.placeholder__icon {
+  width: 52px;
+  height: 52px;
+  margin: 0 auto 18px;
+  display: grid;
+  place-items: center;
+  border-radius: 14px;
+  color: var(--accent);
+  background: var(--accent-soft);
+  border: 1px solid var(--accent-border-soft);
+}
+
+.placeholder__card h2 {
+  margin: 0 0 8px;
+  font-family: var(--font-display);
+  font-size: 20px;
+  letter-spacing: -0.03em;
+}
+
+.placeholder__card p {
+  margin: 0;
+  color: var(--text-secondary);
+  font-size: 14px;
+  line-height: 1.55;
+}

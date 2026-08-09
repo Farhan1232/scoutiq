@@ -1,0 +1,19 @@
+{
+  "_comment": "Scaffold only — do not use until cloud sync is intentionally enabled.",
+  "enableChecklist": [
+    "npm i @supabase/supabase-js",
+    "Set VITE_SUPABASE_URL and VITE_SUPABASE_ANON_KEY",
+    "Set CLOUD_BACKEND = \"supabase\" and CLOUD_SYNC_ENABLED = true in src/cloud/config.ts",
+    "Implement createSupabaseCloudProvider() domain sync methods",
+    "Create tables: profiles, app_settings, save_metadata, analysis_history, transfer_shortlist",
+    "Each table must include id, user_id, updated_at (and deleted_at optional)",
+    "Never store full Football Manager save blobs in save_metadata"
+  ],
+  "suggestedTables": {
+    "profiles": ["id", "user_id", "display_name", "email", "language", "plan", "initials", "updated_at"],
+    "app_settings": ["id", "user_id", "theme_preference", "language", "notifications_enabled", "updated_at"],
+    "save_metadata": ["id", "user_id", "save_name", "club_name", "competition", "season", "game_date", "last_opened_at", "file_name", "file_size_bytes", "updated_at"],
+    "analysis_history": ["id", "user_id", "title", "category", "summary", "created_at", "updated_at"],
+    "transfer_shortlist": ["id", "user_id", "player_name", "position", "club", "age", "estimated_value", "priority", "notes", "updated_at"]
+  }
+}

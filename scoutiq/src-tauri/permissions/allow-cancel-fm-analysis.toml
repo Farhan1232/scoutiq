@@ -1,0 +1,4 @@
+[[permission]]
+identifier = "allow-cancel-fm-analysis"
+description = "Erlaubt das Abbrechen einer laufenden FM-Analyse."
+commands.allow = ["cancel_fm_analysis"]

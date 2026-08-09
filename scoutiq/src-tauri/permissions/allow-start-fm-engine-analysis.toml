@@ -1,0 +1,4 @@
+[[permission]]
+identifier = "allow-start-fm-engine-analysis"
+description = "Allows starting the generic FM26 engine analysis with progress"
+commands.allow = ["start_fm_engine_analysis"]

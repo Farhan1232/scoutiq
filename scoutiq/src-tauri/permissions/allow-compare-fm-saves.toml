@@ -1,0 +1,4 @@
+[[permission]]
+identifier = "allow-compare-fm-saves"
+description = "Erlaubt den differenziellen Vergleich zweier FM-Spielstände (nur Lesen)."
+commands.allow = ["compare_fm_saves"]

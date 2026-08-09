@@ -1,0 +1,4 @@
+[[permission]]
+identifier = "allow-analyze-fm-save"
+description = "Erlaubt die kombinierte read-only Analyse eines FM-Spielstands."
+commands.allow = ["analyze_fm_save"]

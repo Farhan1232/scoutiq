@@ -1,0 +1,234 @@
+.topnav {
+  position: relative;
+  z-index: 100;
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: var(--topnav-gap);
+  min-height: var(--topbar-height);
+  padding: 16px var(--topnav-padding-x) 12px;
+  border-bottom: 1px solid var(--border-subtle);
+  background: var(--bg-topnav);
+  backdrop-filter: blur(16px);
+  overflow: visible;
+}
+
+.topnav__left {
+  min-width: 0;
+  flex: 1;
+}
+
+.topnav__crumbs {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  margin-bottom: 6px;
+  color: var(--text-muted);
+  font-size: 12px;
+}
+
+.topnav__sep {
+  opacity: 0.5;
+}
+
+.topnav__crumb.is-current {
+  color: var(--text-secondary);
+}
+
+.topnav__title {
+  margin: 0;
+  font-family: var(--font-display);
+  font-size: var(--title-size);
+  font-weight: 600;
+  letter-spacing: -0.03em;
+  line-height: 1.2;
+}
+
+.topnav__subtitle {
+  margin: 4px 0 0;
+  color: var(--text-muted);
+  font-size: 13px;
+  max-width: 52ch;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.topnav__right {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding-top: 2px;
+  flex-shrink: 0;
+  overflow: visible;
+}
+
+.topnav__search {
+  position: relative;
+  display: flex;
+  align-items: center;
+  width: var(--topnav-search-width);
+  height: 36px;
+  padding: 0 10px 0 12px;
+  border-radius: 10px;
+  background: var(--bg-elevated);
+  border: 1px solid var(--border-default);
+  color: var(--text-muted);
+  transition:
+    border-color var(--duration-fast) var(--ease-out),
+    box-shadow var(--duration-fast) var(--ease-out),
+    width var(--duration) var(--ease-out);
+}
+
+.topnav__search:focus-within {
+  border-color: var(--border-accent);
+  box-shadow: 0 0 0 3px var(--accent-ring);
+  color: var(--text-secondary);
+}
+
+.topnav__search input {
+  flex: 1;
+  min-width: 0;
+  margin-left: 8px;
+  border: none;
+  outline: none;
+  background: transparent;
+  color: var(--text-primary);
+}
+
+.topnav__search input::placeholder {
+  color: var(--text-muted);
+}
+
+.topnav__kbd {
+  display: inline-flex;
+  align-items: center;
+  gap: 2px;
+  height: 22px;
+  padding: 0 6px;
+  border-radius: 6px;
+  border: 1px solid var(--border-default);
+  background: var(--bg-overlay-03);
+  color: var(--text-muted);
+  font-family: var(--font-mono);
+  font-size: 11px;
+  flex-shrink: 0;
+}
+
+.topnav__icon-btn {
+  position: relative;
+  display: grid;
+  place-items: center;
+  width: 36px;
+  height: 36px;
+  border-radius: 10px;
+  color: var(--text-secondary);
+  background: var(--bg-elevated);
+  border: 1px solid var(--border-default);
+  transition:
+    background var(--duration-fast) var(--ease-out),
+    color var(--duration-fast) var(--ease-out),
+    border-color var(--duration-fast) var(--ease-out);
+}
+
+.topnav__icon-btn:hover {
+  color: var(--text-primary);
+  background: var(--bg-surface-hover);
+  border-color: var(--border-strong);
+}
+
+.topnav__notify {
+  position: absolute;
+  top: 8px;
+  right: 9px;
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: var(--accent);
+  box-shadow: 0 0 0 2px var(--bg-elevated);
+}
+
+.topnav__profile {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  height: 36px;
+  padding: 0 8px 0 4px;
+  border-radius: 10px;
+  color: var(--text-secondary);
+  transition: background var(--duration-fast) var(--ease-out);
+}
+
+.topnav__profile:hover {
+  background: var(--bg-overlay-04);
+  color: var(--text-primary);
+}
+
+.topnav__avatar {
+  display: grid;
+  place-items: center;
+  width: 28px;
+  height: 28px;
+  border-radius: 8px;
+  background: var(--avatar-bg);
+  border: 1px solid var(--accent-avatar-border);
+  color: var(--accent);
+  font-size: 11px;
+  font-weight: 650;
+  flex-shrink: 0;
+}
+
+.topnav__profile-meta {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  line-height: 1.15;
+}
+
+.topnav__name {
+  color: var(--text-primary);
+  font-size: 13px;
+  font-weight: 500;
+}
+
+.topnav__role {
+  font-size: 11px;
+  color: var(--text-muted);
+}
+
+/* Dense desktop: reclaim horizontal chrome */
+@media (max-width: 1440px) {
+  .topnav__subtitle {
+    display: none;
+  }
+}
+
+@media (max-width: 1366px) {
+  .topnav__profile-meta {
+    display: none;
+  }
+
+  .topnav__profile {
+    padding: 0 4px;
+  }
+}
+
+@media (max-width: 1280px) {
+  .topnav__search {
+    display: none;
+  }
+
+  .topnav__crumbs {
+    display: none;
+  }
+}
+
+/* Wide desktops: more breathing room in the bar */
+@media (min-width: 1728px) {
+  .topnav {
+    padding-top: 18px;
+    padding-bottom: 14px;
+  }
+}

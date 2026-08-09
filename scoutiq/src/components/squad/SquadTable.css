@@ -1,0 +1,64 @@
+.squad-table-wrap {
+  width: 100%;
+  overflow: auto;
+  border: 1px solid var(--border-subtle);
+  border-radius: 14px;
+  background: var(--bg-elevated);
+}
+
+.squad-table {
+  width: 100%;
+  border-collapse: collapse;
+  min-width: 920px;
+}
+
+.squad-table th,
+.squad-table td {
+  padding: 12px 14px;
+  text-align: left;
+  border-bottom: 1px solid var(--border-subtle);
+  white-space: nowrap;
+}
+
+.squad-table th {
+  position: sticky;
+  top: 0;
+  z-index: 1;
+  background: var(--bg-overlay-03);
+  color: var(--text-muted);
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+}
+
+.squad-table td {
+  color: var(--text-secondary);
+  font-size: 13px;
+}
+
+.squad-table__name {
+  color: var(--text-primary);
+  font-weight: 560;
+}
+
+.squad-table tbody tr:hover td {
+  background: var(--bg-surface-hover);
+}
+
+.squad-table tbody tr:last-child td {
+  border-bottom: none;
+}
+
+.squad-table__sort {
+  display: inline-flex;
+  align-items: center;
+  gap: 2px;
+  color: inherit;
+  font: inherit;
+  font-weight: 600;
+}
+
+.squad-table__sort:hover,
+.squad-table__sort.is-active {
+  color: var(--text-primary);
+}

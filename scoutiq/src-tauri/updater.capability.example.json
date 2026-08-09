@@ -1,0 +1,10 @@
+{
+  "$schema": "./gen/schemas/desktop-schema.json",
+  "identifier": "updater-example",
+  "description": "Example capability fragment for enabling Tauri updater later. Merge these permissions into capabilities/default.json when ready — do not place this file inside capabilities/.",
+  "windows": ["main"],
+  "permissions": [
+    "updater:default",
+    "process:default"
+  ]
+}

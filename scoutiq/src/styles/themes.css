@@ -1,0 +1,279 @@
+/* Dark is the default contract. Light mirrors the same token names. */
+
+:root,
+[data-theme="dark"] {
+  color-scheme: dark;
+
+  --bg-base: #08090b;
+  --bg-shell: #0c0e11;
+  --bg-elevated: #111316;
+  --bg-surface: #15181d;
+  --bg-surface-hover: #1a1e25;
+  --bg-muted: #1e232b;
+  --bg-sidebar-from: #0e1014;
+  --bg-logo: #12151a;
+  --bg-topnav: rgba(8, 9, 11, 0.72);
+  --bg-avatar-from: #1d2a22;
+  --bg-avatar-to: #132018;
+  --bg-overlay-02: rgba(255, 255, 255, 0.02);
+  --bg-overlay-03: rgba(255, 255, 255, 0.03);
+  --bg-overlay-04: rgba(255, 255, 255, 0.04);
+  --bg-overlay-08: rgba(255, 255, 255, 0.08);
+  --bg-overlay-14: rgba(255, 255, 255, 0.14);
+
+  --border-subtle: rgba(255, 255, 255, 0.05);
+  --border-default: rgba(255, 255, 255, 0.08);
+  --border-strong: rgba(255, 255, 255, 0.12);
+  --border-accent: rgba(57, 255, 103, 0.35);
+
+  --text-primary: #f4f6f8;
+  --text-secondary: #9aa3ae;
+  --text-muted: #6b7380;
+  --text-inverse: #0a0b0d;
+
+  --accent: var(--brand-accent);
+  --accent-hover: #4dff78;
+  --accent-soft: rgba(57, 255, 103, 0.12);
+  --accent-softer: rgba(57, 255, 103, 0.06);
+  --accent-glow: rgba(57, 255, 103, 0.22);
+  --accent-border: rgba(57, 255, 103, 0.28);
+  --accent-border-soft: rgba(57, 255, 103, 0.2);
+  --accent-ring: rgba(57, 255, 103, 0.08);
+  --accent-ring-strong: rgba(57, 255, 103, 0.1);
+  --accent-selection: rgba(57, 255, 103, 0.28);
+  --accent-ambient: rgba(57, 255, 103, 0.07);
+  --accent-line: rgba(57, 255, 103, 0.35);
+  --accent-hover-wash: rgba(57, 255, 103, 0.04);
+  --accent-nav-from: rgba(57, 255, 103, 0.14);
+  --accent-nav-to: rgba(57, 255, 103, 0.04);
+  --accent-nav-border: rgba(57, 255, 103, 0.14);
+  --accent-dot-ring: rgba(57, 255, 103, 0.15);
+  --accent-dot-ring-strong: rgba(57, 255, 103, 0.18);
+  --accent-logo-glow: rgba(57, 255, 103, 0.12);
+  --accent-avatar-border: rgba(57, 255, 103, 0.3);
+  --accent-button-ring: rgba(57, 255, 103, 0.25);
+  --accent-button-glow: rgba(57, 255, 103, 0.15);
+  --accent-bar-glow: rgba(57, 255, 103, 0.35);
+  --accent-tone-ring: rgba(57, 255, 103, 0.14);
+  --accent-focus-border: rgba(57, 255, 103, 0.4);
+
+  --success: #39ff67;
+  --warning: #f5b84c;
+  --danger: #ff6b7a;
+  --info: #6ba3ff;
+  --info-ambient: rgba(107, 163, 255, 0.05);
+
+  --warning-soft: rgba(245, 184, 76, 0.12);
+  --warning-border: rgba(245, 184, 76, 0.22);
+  --warning-tone-ring: rgba(245, 184, 76, 0.14);
+  --danger-soft: rgba(255, 107, 122, 0.12);
+  --danger-border: rgba(255, 107, 122, 0.22);
+  --info-soft: rgba(107, 163, 255, 0.12);
+  --info-border: rgba(107, 163, 255, 0.22);
+  --info-tone-ring: rgba(107, 163, 255, 0.14);
+
+  --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.35);
+  --shadow-md: 0 8px 24px rgba(0, 0, 0, 0.35);
+  --shadow-card: 0 12px 28px rgba(0, 0, 0, 0.28);
+  --shadow-glow: 0 0 0 1px var(--border-accent), 0 8px 32px var(--accent-glow);
+  --shadow-button-primary: 0 0 0 1px var(--accent-button-ring),
+    0 8px 20px var(--accent-button-glow);
+  --shadow-logo: 0 0 24px var(--accent-logo-glow);
+  --shadow-bar: 0 0 8px var(--accent-bar-glow);
+
+  --scrollbar-thumb: var(--bg-overlay-08);
+  --scrollbar-thumb-hover: var(--bg-overlay-14);
+
+  --nav-active-bg: linear-gradient(
+    90deg,
+    var(--accent-nav-from),
+    var(--accent-nav-to)
+  );
+  --card-sheen: linear-gradient(
+    180deg,
+    var(--bg-overlay-02),
+    transparent 40%
+  );
+  --card-hover-wash: linear-gradient(
+    180deg,
+    var(--accent-hover-wash),
+    transparent 50%
+  );
+  --rec-hover-wash: linear-gradient(
+    160deg,
+    var(--accent-softer),
+    transparent 55%
+  );
+  --avatar-bg: linear-gradient(
+    135deg,
+    var(--bg-avatar-from),
+    var(--bg-avatar-to)
+  );
+  --body-glow-accent: radial-gradient(
+    1200px 600px at 12% -10%,
+    var(--accent-ambient),
+    transparent 55%
+  );
+  --body-glow-info: radial-gradient(
+    900px 500px at 90% 0%,
+    var(--info-ambient),
+    transparent 50%
+  );
+  --placeholder-glow: radial-gradient(
+    circle at 50% 0%,
+    var(--accent-soft),
+    transparent 55%
+  );
+  --accent-edge: linear-gradient(
+    90deg,
+    transparent,
+    var(--accent-line),
+    transparent
+  );
+  --sidebar-bg: linear-gradient(
+    180deg,
+    var(--bg-sidebar-from) 0%,
+    var(--bg-shell) 100%
+  );
+}
+
+/*
+  Light — architectural preparation.
+  Same token surface as dark so components stay theme-agnostic.
+  Final visual polish can land later without component rewrites.
+*/
+[data-theme="light"] {
+  color-scheme: light;
+
+  --bg-base: #f3f5f7;
+  --bg-shell: #eef1f4;
+  --bg-elevated: #ffffff;
+  --bg-surface: #f7f8fa;
+  --bg-surface-hover: #eef1f5;
+  --bg-muted: #e5e9ee;
+  --bg-sidebar-from: #f7f9fb;
+  --bg-logo: #ffffff;
+  --bg-topnav: rgba(243, 245, 247, 0.82);
+  --bg-avatar-from: #e8f8ee;
+  --bg-avatar-to: #d7f4e2;
+  --bg-overlay-02: rgba(15, 23, 32, 0.02);
+  --bg-overlay-03: rgba(15, 23, 32, 0.03);
+  --bg-overlay-04: rgba(15, 23, 32, 0.04);
+  --bg-overlay-08: rgba(15, 23, 32, 0.08);
+  --bg-overlay-14: rgba(15, 23, 32, 0.12);
+
+  --border-subtle: rgba(15, 23, 32, 0.06);
+  --border-default: rgba(15, 23, 32, 0.1);
+  --border-strong: rgba(15, 23, 32, 0.16);
+  --border-accent: rgba(20, 180, 70, 0.35);
+
+  --text-primary: #12151a;
+  --text-secondary: #5b6572;
+  --text-muted: #7a8491;
+  --text-inverse: #07100b;
+
+  --accent: var(--brand-accent);
+  --accent-hover: #2ae85a;
+  --accent-soft: rgba(57, 255, 103, 0.16);
+  --accent-softer: rgba(57, 255, 103, 0.08);
+  --accent-glow: rgba(57, 255, 103, 0.18);
+  --accent-border: rgba(20, 180, 70, 0.28);
+  --accent-border-soft: rgba(20, 180, 70, 0.2);
+  --accent-ring: rgba(57, 255, 103, 0.14);
+  --accent-ring-strong: rgba(57, 255, 103, 0.18);
+  --accent-selection: rgba(57, 255, 103, 0.32);
+  --accent-ambient: rgba(57, 255, 103, 0.1);
+  --accent-line: rgba(20, 180, 70, 0.4);
+  --accent-hover-wash: rgba(57, 255, 103, 0.08);
+  --accent-nav-from: rgba(57, 255, 103, 0.2);
+  --accent-nav-to: rgba(57, 255, 103, 0.05);
+  --accent-nav-border: rgba(20, 180, 70, 0.18);
+  --accent-dot-ring: rgba(57, 255, 103, 0.2);
+  --accent-dot-ring-strong: rgba(57, 255, 103, 0.24);
+  --accent-logo-glow: rgba(57, 255, 103, 0.16);
+  --accent-avatar-border: rgba(20, 180, 70, 0.35);
+  --accent-button-ring: rgba(20, 180, 70, 0.3);
+  --accent-button-glow: rgba(57, 255, 103, 0.22);
+  --accent-bar-glow: rgba(57, 255, 103, 0.3);
+  --accent-tone-ring: rgba(57, 255, 103, 0.18);
+  --accent-focus-border: rgba(20, 180, 70, 0.45);
+
+  --success: #1fbf55;
+  --warning: #d9921f;
+  --danger: #e5485a;
+  --info: #3b7ddd;
+  --info-ambient: rgba(59, 125, 221, 0.08);
+
+  --warning-soft: rgba(217, 146, 31, 0.12);
+  --warning-border: rgba(217, 146, 31, 0.22);
+  --warning-tone-ring: rgba(217, 146, 31, 0.16);
+  --danger-soft: rgba(229, 72, 90, 0.12);
+  --danger-border: rgba(229, 72, 90, 0.22);
+  --info-soft: rgba(59, 125, 221, 0.12);
+  --info-border: rgba(59, 125, 221, 0.22);
+  --info-tone-ring: rgba(59, 125, 221, 0.16);
+
+  --shadow-sm: 0 1px 2px rgba(15, 23, 32, 0.06);
+  --shadow-md: 0 8px 24px rgba(15, 23, 32, 0.08);
+  --shadow-card: 0 12px 28px rgba(15, 23, 32, 0.1);
+  --shadow-glow: 0 0 0 1px var(--border-accent), 0 8px 32px var(--accent-glow);
+  --shadow-button-primary: 0 0 0 1px var(--accent-button-ring),
+    0 8px 20px var(--accent-button-glow);
+  --shadow-logo: 0 0 24px var(--accent-logo-glow);
+  --shadow-bar: 0 0 8px var(--accent-bar-glow);
+
+  --scrollbar-thumb: var(--bg-overlay-08);
+  --scrollbar-thumb-hover: var(--bg-overlay-14);
+
+  --nav-active-bg: linear-gradient(
+    90deg,
+    var(--accent-nav-from),
+    var(--accent-nav-to)
+  );
+  --card-sheen: linear-gradient(
+    180deg,
+    var(--bg-overlay-02),
+    transparent 40%
+  );
+  --card-hover-wash: linear-gradient(
+    180deg,
+    var(--accent-hover-wash),
+    transparent 50%
+  );
+  --rec-hover-wash: linear-gradient(
+    160deg,
+    var(--accent-softer),
+    transparent 55%
+  );
+  --avatar-bg: linear-gradient(
+    135deg,
+    var(--bg-avatar-from),
+    var(--bg-avatar-to)
+  );
+  --body-glow-accent: radial-gradient(
+    1200px 600px at 12% -10%,
+    var(--accent-ambient),
+    transparent 55%
+  );
+  --body-glow-info: radial-gradient(
+    900px 500px at 90% 0%,
+    var(--info-ambient),
+    transparent 50%
+  );
+  --placeholder-glow: radial-gradient(
+    circle at 50% 0%,
+    var(--accent-soft),
+    transparent 55%
+  );
+  --accent-edge: linear-gradient(
+    90deg,
+    transparent,
+    var(--accent-line),
+    transparent
+  );
+  --sidebar-bg: linear-gradient(
+    180deg,
+    var(--bg-sidebar-from) 0%,
+    var(--bg-shell) 100%
+  );
+}

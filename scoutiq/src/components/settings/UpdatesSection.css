@@ -1,0 +1,91 @@
+.updates-section {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.updates-section__version {
+  font-family: var(--font-mono);
+  font-size: 12px;
+  letter-spacing: 0.02em;
+}
+
+.updates-section__actions {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.updates-status {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  padding: 12px 14px;
+  border-radius: var(--radius-md);
+  border: 1px solid var(--border-subtle);
+  background: var(--bg-overlay-02);
+}
+
+.updates-status__dot {
+  width: 8px;
+  height: 8px;
+  margin-top: 5px;
+  border-radius: 50%;
+  flex-shrink: 0;
+  background: var(--text-muted);
+}
+
+.updates-status--idle .updates-status__dot {
+  background: var(--text-muted);
+}
+
+.updates-status--checking .updates-status__dot {
+  background: var(--info);
+  box-shadow: 0 0 0 3px var(--info-tone-ring);
+  animation: pulse-soft 1.4s ease-in-out infinite;
+}
+
+.updates-status--upToDate .updates-status__dot {
+  background: var(--accent);
+  box-shadow: 0 0 0 3px var(--accent-tone-ring);
+}
+
+.updates-status--available .updates-status__dot {
+  background: var(--warning);
+  box-shadow: 0 0 0 3px var(--warning-tone-ring);
+}
+
+.updates-status--disabled .updates-status__dot {
+  background: var(--text-secondary);
+}
+
+.updates-status--error .updates-status__dot {
+  background: var(--danger);
+  box-shadow: 0 0 0 3px var(--danger-border);
+}
+
+.updates-status__copy {
+  min-width: 0;
+}
+
+.updates-status__label {
+  margin: 0 0 2px;
+  color: var(--text-muted);
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+.updates-status__message {
+  margin: 0;
+  color: var(--text-secondary);
+  font-size: 13px;
+  line-height: 1.45;
+}
+
+.updates-status__available {
+  color: var(--text-primary);
+  font-family: var(--font-mono);
+  font-size: 12px;
+}

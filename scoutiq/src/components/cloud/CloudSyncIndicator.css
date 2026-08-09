@@ -1,0 +1,98 @@
+.cloud-indicator {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  height: 36px;
+  padding: 0 12px;
+  border-radius: 10px;
+  border: 1px solid var(--border-default);
+  background: var(--bg-elevated);
+  color: var(--text-secondary);
+  transition:
+    background var(--duration-fast) var(--ease-out),
+    border-color var(--duration-fast) var(--ease-out),
+    color var(--duration-fast) var(--ease-out);
+}
+
+.cloud-indicator:hover:not(:disabled) {
+  color: var(--text-primary);
+  background: var(--bg-surface-hover);
+  border-color: var(--border-strong);
+}
+
+.cloud-indicator:disabled {
+  cursor: default;
+  opacity: 0.85;
+}
+
+.cloud-indicator__label {
+  font-size: 12px;
+  font-weight: 500;
+  white-space: nowrap;
+}
+
+.cloud-indicator__dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: var(--text-muted);
+  flex-shrink: 0;
+}
+
+.cloud-indicator--synced {
+  color: var(--text-secondary);
+}
+
+.cloud-indicator--synced .cloud-indicator__dot {
+  background: var(--accent);
+  box-shadow: 0 0 0 3px var(--accent-tone-ring);
+}
+
+.cloud-indicator--syncing {
+  color: var(--info);
+  border-color: var(--info-border);
+}
+
+.cloud-indicator--syncing .cloud-indicator__dot {
+  background: var(--info);
+  box-shadow: 0 0 0 3px var(--info-tone-ring);
+  animation: pulse-soft 1.2s ease-in-out infinite;
+}
+
+.cloud-indicator--offline {
+  color: var(--text-muted);
+}
+
+.cloud-indicator--offline .cloud-indicator__dot {
+  background: var(--text-muted);
+}
+
+.cloud-indicator--unsigned {
+  color: var(--text-muted);
+}
+
+.cloud-indicator--unsigned .cloud-indicator__dot {
+  background: var(--text-muted);
+}
+
+.cloud-indicator--error {
+  color: var(--danger);
+  border-color: var(--danger-border);
+}
+
+.cloud-indicator--error .cloud-indicator__dot {
+  background: var(--danger);
+  box-shadow: 0 0 0 3px var(--danger-border);
+}
+
+@media (max-width: 1366px) {
+  .cloud-indicator__label {
+    display: none;
+  }
+
+  .cloud-indicator {
+    width: 36px;
+    padding: 0;
+    justify-content: center;
+  }
+}

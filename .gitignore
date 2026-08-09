@@ -1,0 +1,31 @@
+# Football Manager save files. Never commit these: they are client data and
+# each one is 100 MB–640 MB. Point SCOUTIQ_TEST_SAVES at a local directory
+# instead — see scoutiq/README.md.
+*.fm
+
+# Rust build output
+target/
+
+# Node
+node_modules/
+dist/
+dist-ssr/
+*.local
+
+# Secrets — .env.example is the template that is committed
+.env
+.env.*
+!.env.example
+
+# Logs
+logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+pnpm-debug.log*
+
+# OS / editor cruft
+.DS_Store
+.idea
+*.swp
+*.sw?

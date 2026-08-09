@@ -1,0 +1,4 @@
+[[permission]]
+identifier = "allow-analyze-fm-identity"
+description = "Allows resolving managed club/competition identity from an FM save"
+commands.allow = ["analyze_fm_identity"]

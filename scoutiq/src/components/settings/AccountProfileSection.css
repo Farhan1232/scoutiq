@@ -1,0 +1,73 @@
+.account-profile {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.account-profile--empty {
+  align-items: flex-start;
+}
+
+.account-profile--empty p {
+  margin: 0;
+  color: var(--text-secondary);
+  font-size: 13px;
+}
+
+.account-profile__identity {
+  display: flex;
+  align-items: flex-start;
+  gap: 14px;
+}
+
+.account-profile__avatar {
+  display: grid;
+  place-items: center;
+  width: 48px;
+  height: 48px;
+  border-radius: 14px;
+  background: var(--avatar-bg);
+  border: 1px solid var(--accent-avatar-border);
+  color: var(--accent);
+  font-size: 14px;
+  font-weight: 650;
+  flex-shrink: 0;
+}
+
+.account-profile__meta {
+  min-width: 0;
+}
+
+.account-profile__name {
+  margin: 0;
+  font-size: 15px;
+  font-weight: 600;
+}
+
+.account-profile__email {
+  margin: 3px 0 0;
+  color: var(--text-muted);
+  font-size: 13px;
+}
+
+.account-profile__badges {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-top: 10px;
+}
+
+.account-profile__fields {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  padding: 4px 0;
+  border-top: 1px solid var(--border-subtle);
+  border-bottom: 1px solid var(--border-subtle);
+}
+
+.account-profile__actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}

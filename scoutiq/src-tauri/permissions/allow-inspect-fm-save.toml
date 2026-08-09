@@ -1,0 +1,4 @@
+[[permission]]
+identifier = "allow-inspect-fm-save"
+description = "Erlaubt die read-only Analyse eines Football-Manager-Spielstands."
+commands.allow = ["inspect_fm_save"]

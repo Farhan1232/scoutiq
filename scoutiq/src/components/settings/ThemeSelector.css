@@ -1,0 +1,102 @@
+.theme-selector {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.theme-selector__label {
+  margin: 0;
+  color: var(--text-secondary);
+  font-size: 13px;
+  font-weight: 500;
+}
+
+.theme-selector__options {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: var(--grid-gap);
+}
+
+.theme-option {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 12px;
+  min-height: 108px;
+  padding: 14px;
+  border-radius: var(--radius-md);
+  border: 1px solid var(--border-default);
+  background: var(--card-sheen), var(--bg-surface);
+  text-align: left;
+  transition:
+    border-color var(--duration-fast) var(--ease-out),
+    background var(--duration-fast) var(--ease-out),
+    box-shadow var(--duration-fast) var(--ease-out),
+    transform var(--duration-fast) var(--ease-out);
+}
+
+.theme-option:hover {
+  border-color: var(--border-strong);
+  background: var(--bg-surface-hover);
+  transform: translateY(-1px);
+}
+
+.theme-option.is-selected {
+  border-color: var(--border-accent);
+  background: var(--rec-hover-wash), var(--bg-surface);
+  box-shadow: inset 0 0 0 1px var(--accent-nav-border);
+}
+
+.theme-option__icon {
+  display: grid;
+  place-items: center;
+  width: 32px;
+  height: 32px;
+  border-radius: 10px;
+  color: var(--text-secondary);
+  background: var(--bg-overlay-03);
+  border: 1px solid var(--border-subtle);
+}
+
+.theme-option.is-selected .theme-option__icon {
+  color: var(--accent);
+  background: var(--accent-soft);
+  border-color: var(--accent-border-soft);
+}
+
+.theme-option__copy {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  min-width: 0;
+}
+
+.theme-option__title {
+  color: var(--text-primary);
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.theme-option__desc {
+  color: var(--text-muted);
+  font-size: 12px;
+  line-height: 1.4;
+}
+
+.theme-selector__hint {
+  margin: 0;
+  color: var(--text-muted);
+  font-size: 12px;
+}
+
+/* Keep 3 theme options visible on all desktop widths */
+@media (max-width: 1280px) {
+  .theme-option {
+    min-height: 96px;
+    padding: 12px;
+  }
+
+  .theme-option__desc {
+    display: none;
+  }
+}

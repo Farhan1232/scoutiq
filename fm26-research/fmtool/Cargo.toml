@@ -1,0 +1,11 @@
+[package]
+name = "fmtool"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+zstd-safe = "7.2"
+
+[profile.release]
+opt-level = 3
+debug = false

@@ -1,0 +1,4 @@
+[[permission]]
+identifier = "allow-update-recent-menu"
+description = "Erlaubt das Aktualisieren des Menüs „Zuletzt geöffnet“."
+commands.allow = ["update_recent_menu"]

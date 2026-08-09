@@ -1,0 +1,62 @@
+.language-selector {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.language-selector__label {
+  color: var(--text-secondary);
+  font-size: 13px;
+  font-weight: 500;
+}
+
+.language-selector__control {
+  position: relative;
+  max-width: 280px;
+}
+
+.language-selector__select {
+  width: 100%;
+  height: 42px;
+  padding: 0 40px 0 14px;
+  border-radius: 12px;
+  border: 1px solid var(--border-default);
+  background: var(--card-sheen), var(--bg-surface);
+  color: var(--text-primary);
+  appearance: none;
+  outline: none;
+  cursor: pointer;
+  transition:
+    border-color var(--duration-fast) var(--ease-out),
+    box-shadow var(--duration-fast) var(--ease-out),
+    background var(--duration-fast) var(--ease-out);
+}
+
+.language-selector__select:hover {
+  border-color: var(--border-strong);
+  background: var(--bg-surface-hover);
+}
+
+.language-selector__select:focus {
+  border-color: var(--accent-focus-border);
+  box-shadow: 0 0 0 3px var(--accent-ring-strong);
+}
+
+.language-selector__control::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  right: 16px;
+  width: 8px;
+  height: 8px;
+  border-right: 1.5px solid var(--text-muted);
+  border-bottom: 1.5px solid var(--text-muted);
+  transform: translateY(-70%) rotate(45deg);
+  pointer-events: none;
+}
+
+.language-selector__hint {
+  margin: 0;
+  color: var(--text-muted);
+  font-size: 12px;
+}

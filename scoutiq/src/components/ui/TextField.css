@@ -1,0 +1,54 @@
+.text-field {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  width: 100%;
+}
+
+.text-field__label {
+  color: var(--text-secondary);
+  font-size: 13px;
+  font-weight: 500;
+}
+
+.text-field__input {
+  width: 100%;
+  height: 42px;
+  padding: 0 14px;
+  border-radius: 12px;
+  border: 1px solid var(--border-default);
+  background: var(--card-sheen), var(--bg-surface);
+  color: var(--text-primary);
+  outline: none;
+  transition:
+    border-color var(--duration-fast) var(--ease-out),
+    box-shadow var(--duration-fast) var(--ease-out),
+    background var(--duration-fast) var(--ease-out);
+}
+
+.text-field__input::placeholder {
+  color: var(--text-muted);
+}
+
+.text-field__input:hover {
+  border-color: var(--border-strong);
+}
+
+.text-field__input:focus {
+  border-color: var(--accent-focus-border);
+  box-shadow: 0 0 0 3px var(--accent-ring-strong);
+}
+
+.text-field__input.is-invalid {
+  border-color: var(--danger-border);
+}
+
+.text-field__error {
+  color: var(--danger);
+  font-size: 12px;
+}
+
+.text-field__hint {
+  color: var(--text-muted);
+  font-size: 12px;
+}

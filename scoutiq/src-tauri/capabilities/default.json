@@ -1,0 +1,40 @@
+{
+  "$schema": "../gen/schemas/desktop-schema.json",
+  "identifier": "default",
+  "description": "Capability for the main window",
+  "windows": ["main"],
+  "permissions": [
+    "core:default",
+    "opener:default",
+    "dialog:default",
+    "allow-update-recent-menu",
+    "allow-inspect-fm-save",
+    "allow-extract-fm-metadata",
+    "allow-analyze-fm-save",
+    "allow-validate-fm-save",
+    "allow-start-fm-analysis",
+    "allow-start-fm-engine-analysis",
+    "allow-cancel-fm-analysis",
+    "allow-probe-fm-value",
+    "allow-parse-fm-container",
+    "allow-probe-fm-container",
+    "allow-compare-fm-saves",
+    "allow-export-fm-diagnostic",
+    "allow-get-calibrating-metadata",
+    "allow-analyze-fm-identity",
+    "fs:allow-read-text-file",
+    "fs:allow-read-file",
+    "fs:allow-write-text-file",
+    "fs:allow-exists",
+    "fs:allow-stat",
+    {
+      "identifier": "fs:scope",
+      "allow": [
+        { "path": "$HOME/**" },
+        { "path": "$DOCUMENT/**" },
+        { "path": "$DOWNLOAD/**" },
+        { "path": "$DESKTOP/**" }
+      ]
+    }
+  ]
+}

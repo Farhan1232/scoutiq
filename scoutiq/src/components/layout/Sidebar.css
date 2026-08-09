@@ -1,0 +1,213 @@
+.sidebar {
+  display: flex;
+  flex-direction: column;
+  width: var(--sidebar-width);
+  min-width: var(--sidebar-width);
+  height: 100%;
+  padding: 18px 14px;
+  background: var(--sidebar-bg);
+  border-right: 1px solid var(--border-subtle);
+  transition:
+    width var(--duration) var(--ease-out),
+    min-width var(--duration) var(--ease-out),
+    padding var(--duration) var(--ease-out);
+}
+
+.sidebar__brand {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 4px 8px 20px;
+}
+
+.sidebar__logo {
+  display: grid;
+  place-items: center;
+  width: 34px;
+  height: 34px;
+  border-radius: 10px;
+  background: var(--bg-logo);
+  border: 1px solid var(--accent-border);
+  box-shadow: var(--shadow-logo);
+  flex-shrink: 0;
+}
+
+.sidebar__logo-mark {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: var(--accent);
+  box-shadow: 0 0 0 3px var(--accent-dot-ring-strong);
+}
+
+.sidebar__brand-text {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  min-width: 0;
+}
+
+.sidebar__product {
+  font-family: var(--font-display);
+  font-size: 15px;
+  font-weight: 700;
+  letter-spacing: -0.03em;
+}
+
+.sidebar__club {
+  color: var(--text-muted);
+  font-size: 11px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.sidebar__nav {
+  flex: 1;
+  min-height: 0;
+  overflow: auto;
+}
+
+.sidebar__section {
+  margin: 0 0 8px 10px;
+  color: var(--text-muted);
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+.sidebar__list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.sidebar__link {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  height: 38px;
+  padding: 0 10px;
+  border-radius: 10px;
+  color: var(--text-secondary);
+  text-align: left;
+  transition:
+    background var(--duration-fast) var(--ease-out),
+    color var(--duration-fast) var(--ease-out),
+    box-shadow var(--duration-fast) var(--ease-out);
+}
+
+.sidebar__link:hover {
+  color: var(--text-primary);
+  background: var(--bg-overlay-04);
+}
+
+.sidebar__link.is-active {
+  color: var(--text-primary);
+  background: var(--nav-active-bg);
+  box-shadow: inset 0 0 0 1px var(--accent-nav-border);
+}
+
+.sidebar__link.is-active svg {
+  color: var(--accent);
+}
+
+.sidebar__link span:nth-child(2) {
+  flex: 1;
+  font-size: 13.5px;
+  font-weight: 500;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.sidebar__badge {
+  min-width: 20px;
+  height: 18px;
+  padding: 0 6px;
+  border-radius: 999px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 11px;
+  font-weight: 600;
+  font-family: var(--font-mono);
+  color: var(--accent);
+  background: var(--accent-soft);
+  flex-shrink: 0;
+}
+
+.sidebar__footer {
+  margin-top: 16px;
+  padding: 14px 12px;
+  border-radius: var(--radius-md);
+  background: var(--bg-overlay-02);
+  border: 1px solid var(--border-subtle);
+}
+
+.sidebar__season {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 8px;
+  margin-bottom: 8px;
+}
+
+.sidebar__season-label {
+  color: var(--text-muted);
+  font-size: 11px;
+}
+
+.sidebar__season-value {
+  font-family: var(--font-mono);
+  font-size: 12px;
+  font-weight: 500;
+}
+
+.sidebar__league {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: var(--text-secondary);
+  font-size: 12px;
+}
+
+.sidebar__dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--accent);
+  box-shadow: 0 0 0 3px var(--accent-dot-ring);
+  animation: pulse-soft 2.4s ease-in-out infinite;
+  flex-shrink: 0;
+}
+
+/* Icon rail for narrow desktop windows */
+@media (max-width: 1280px) {
+  .sidebar {
+    padding: 16px 10px;
+  }
+
+  .sidebar__brand-text,
+  .sidebar__section,
+  .sidebar__link span:nth-child(2),
+  .sidebar__badge,
+  .sidebar__footer {
+    display: none;
+  }
+
+  .sidebar__brand {
+    justify-content: center;
+    padding: 4px 0 16px;
+  }
+
+  .sidebar__link {
+    justify-content: center;
+    padding: 0;
+  }
+}

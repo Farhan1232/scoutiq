@@ -1,0 +1,96 @@
+/*
+  Desktop layout system — optimized for:
+  13" / 14" / 16" laptops, Full HD, QHD, 4K.
+  No mobile breakpoints.
+*/
+
+:root {
+  --sidebar-width: 248px;
+  --sidebar-width-rail: 76px;
+  --topbar-height: 64px;
+  --content-max: min(1280px, 100%);
+  --settings-max: 760px;
+
+  --page-padding-x: clamp(20px, 2.2vw, 48px);
+  --page-padding-y: clamp(18px, 2vw, 36px);
+  --page-padding-bottom: clamp(28px, 3vw, 48px);
+  --page-gap: clamp(22px, 2.2vw, 36px);
+  --grid-gap: clamp(12px, 1.1vw, 18px);
+  --section-gap: clamp(12px, 1.1vw, 16px);
+
+  --topnav-padding-x: clamp(16px, 2vw, 40px);
+  --topnav-gap: clamp(16px, 1.6vw, 28px);
+  --topnav-search-width: clamp(220px, 22vw, 380px);
+
+  --stat-min: 200px;
+  --rec-min: 280px;
+  --panel-min: 320px;
+
+  --title-size: clamp(1.25rem, 1.1rem + 0.35vw, 1.5rem);
+  --section-title-size: clamp(0.95rem, 0.9rem + 0.15vw, 1.05rem);
+}
+
+/* Compact desktop — 13" / dense windows */
+@media (max-width: 1366px) {
+  :root {
+    --sidebar-width: 228px;
+    --content-max: min(1120px, 100%);
+    --settings-max: 680px;
+    --topbar-height: 60px;
+    --stat-min: 180px;
+    --rec-min: 260px;
+  }
+}
+
+/* Narrow compact — icon rail, denser chrome */
+@media (max-width: 1280px) {
+  :root {
+    --sidebar-width: var(--sidebar-width-rail);
+    --content-max: min(1080px, 100%);
+    --topnav-search-width: clamp(180px, 20vw, 260px);
+  }
+}
+
+/* Standard / 14–16" sweet spot is default tokens */
+
+/* Wide desktop — 16" scaled up / Full HD */
+@media (min-width: 1728px) {
+  :root {
+    --sidebar-width: 264px;
+    --content-max: min(1480px, 100%);
+    --settings-max: 820px;
+    --topbar-height: 68px;
+    --stat-min: 220px;
+    --rec-min: 320px;
+    --panel-min: 360px;
+  }
+}
+
+/* QHD and ultrawide */
+@media (min-width: 2200px) {
+  :root {
+    --sidebar-width: 280px;
+    --content-max: min(1680px, 100%);
+    --settings-max: 900px;
+    --page-padding-x: clamp(40px, 3vw, 72px);
+    --page-padding-y: clamp(28px, 2.2vw, 44px);
+    --stat-min: 240px;
+    --rec-min: 340px;
+  }
+}
+
+/* 4K / very large canvases */
+@media (min-width: 3000px) {
+  :root {
+    --sidebar-width: 300px;
+    --content-max: min(1920px, 100%);
+    --settings-max: 980px;
+    --page-padding-x: clamp(56px, 3.5vw, 96px);
+    --page-padding-y: clamp(32px, 2.4vw, 56px);
+    --page-gap: clamp(32px, 2.4vw, 48px);
+    --grid-gap: 20px;
+    --topnav-search-width: clamp(320px, 18vw, 460px);
+    --stat-min: 260px;
+    --rec-min: 360px;
+  }
+}

@@ -1,0 +1,4 @@
+[[permission]]
+identifier = "allow-validate-fm-save"
+description = "Erlaubt die schnelle Validierung eines FM-Spielstands."
+commands.allow = ["validate_fm_save"]

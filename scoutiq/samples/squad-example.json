@@ -1,0 +1,56 @@
+{
+  "clubName": "Northbridge FC",
+  "season": "2025/26",
+  "players": [
+    {
+      "name": "Jonas Keller",
+      "position": "TW",
+      "age": 29,
+      "nationality": "Deutschland",
+      "marketValue": "8 Mio. €",
+      "wage": "45.000 €",
+      "contractExpiry": "2027-06-30",
+      "squadStatus": "first_team"
+    },
+    {
+      "name": "Mateo Ruiz",
+      "position": "IV",
+      "age": 24,
+      "nationality": "Spanien",
+      "marketValue": "18 Mio. €",
+      "wage": "62.000 €",
+      "contractExpiry": "2028-06-30",
+      "squadStatus": "first_team"
+    },
+    {
+      "name": "Erik Lindqvist",
+      "position": "LV",
+      "age": 20,
+      "nationality": "Schweden",
+      "marketValue": "4,5 Mio. €",
+      "wage": "18.000 €",
+      "contractExpiry": "2029-06-30",
+      "squadStatus": "rotation"
+    },
+    {
+      "name": "João Ribeiro",
+      "position": "ZM",
+      "age": 21,
+      "nationality": "Portugal",
+      "marketValue": "12 Mio. €",
+      "wage": "35.000 €",
+      "contractExpiry": "2028-06-30",
+      "squadStatus": "listed"
+    },
+    {
+      "name": "Luca Bernardi",
+      "position": "ST",
+      "age": 27,
+      "nationality": "Italien",
+      "marketValue": "22 Mio. €",
+      "wage": "78.000 €",
+      "contractExpiry": "2026-06-30",
+      "squadStatus": "first_team"
+    }
+  ]
+}

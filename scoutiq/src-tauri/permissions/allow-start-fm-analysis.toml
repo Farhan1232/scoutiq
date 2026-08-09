@@ -1,0 +1,4 @@
+[[permission]]
+identifier = "allow-start-fm-analysis"
+description = "Erlaubt den Start der gestuften FM-Spielstandanalyse."
+commands.allow = ["start_fm_analysis"]

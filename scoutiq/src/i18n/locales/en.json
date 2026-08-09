@@ -1,0 +1,725 @@
+{
+  "app": {
+    "name": "ScoutIQ",
+    "loading": "Loading ScoutIQ…"
+  },
+  "auth": {
+    "tagline": "Football Manager Assistant",
+    "working": "Please wait…",
+    "orContinueWith": "Also available later with",
+    "comingSoon": "Coming soon",
+    "oauthPrepared": "Google and Apple login are prepared and will be enabled with Supabase.",
+    "fields": {
+      "email": "Email",
+      "password": "Password",
+      "confirmPassword": "Confirm password",
+      "displayName": "Name",
+      "language": "Language",
+      "plan": "Plan"
+    },
+    "plans": {
+      "free": "Free",
+      "pro": "Pro",
+      "elite": "Elite"
+    },
+    "providers": {
+      "email": "Email",
+      "google": "Google",
+      "apple": "Apple"
+    },
+    "login": {
+      "title": "Sign in",
+      "subtitle": "Sign in to continue your ScoutIQ workspace.",
+      "submit": "Sign in",
+      "forgotPassword": "Forgot password?",
+      "noAccount": "No account yet?",
+      "createAccount": "Create account"
+    },
+    "register": {
+      "title": "Register",
+      "subtitle": "Create your ScoutIQ account with email and password.",
+      "submit": "Register",
+      "passwordHint": "At least 8 characters",
+      "hasAccount": "Already registered?",
+      "signIn": "Sign in",
+      "checkEmail": "Account created. Confirm your email via the link. For the desktop app: disable email confirmation in Supabase or confirm the user manually (Authentication → Users)."
+    },
+    "forgot": {
+      "title": "Forgot password",
+      "subtitle": "Enter your email. If an account exists, we will send a reset link.",
+      "submit": "Send reset link",
+      "success": "If an account exists, a reset link was sent by email.",
+      "remembered": "Remembered your password?",
+      "backToLogin": "Back to sign in"
+    },
+    "callback": {
+      "title": "Email confirmation",
+      "subtitle": "ScoutIQ is processing the link from your email.",
+      "working": "Processing confirmation…",
+      "emailConfirmed": "Email confirmed. You can sign in to ScoutIQ now.",
+      "passwordRecovery": "Link is valid. You can reset your password next.",
+      "error": "The confirmation link could not be processed.",
+      "linkExpired": "This email link is invalid or has expired. Confirm the user manually in Supabase or disable “Confirm email” for development — then sign in to ScoutIQ.",
+      "none": "No confirmation link found.",
+      "backToLogin": "Back to sign in"
+    },
+    "account": {
+      "title": "Account",
+      "subtitle": "Manage profile, language and plan",
+      "back": "Back to settings",
+      "profileTitle": "Profile",
+      "profileDescription": "Your ScoutIQ account details.",
+      "methodsTitle": "Sign-in methods",
+      "methodsDescription": "Email login is active. Google and Apple will follow later.",
+      "connected": "Connected",
+      "futureProviders": "Google and Apple login are prepared but not enabled yet.",
+      "emailLocked": "Email changes will arrive later.",
+      "save": "Save",
+      "saved": "Account updated."
+    },
+    "errors": {
+      "invalid_credentials": "Invalid email or password.",
+      "invalid_email": "Please enter a valid email address.",
+      "invalid_name": "Name must be between 2 and 60 characters.",
+      "email_taken": "An account with this email already exists.",
+      "weak_password": "Password must be at least 8 characters.",
+      "password_mismatch": "Passwords do not match.",
+      "user_not_found": "Please enter a valid email address.",
+      "email_not_confirmed": "Please confirm your email address first.",
+      "email_provider_disabled": "Email login is disabled in Supabase. Enable Authentication → Providers → Email.",
+      "not_configured": "Supabase is not configured. Set VITE_SUPABASE_URL and VITE_SUPABASE_PUBLISHABLE_KEY.",
+      "oauth_unavailable": "This login provider is not enabled yet.",
+      "network": "Network error. Please try again.",
+      "unknown": "Something went wrong. Please try again."
+    }
+  },
+  "languages": {
+    "de": "Deutsch",
+    "en": "English"
+  },
+  "nav": {
+    "workspace": "Workspace",
+    "primary": "Primary navigation",
+    "dashboard": "Dashboard",
+    "squad": "Squad",
+    "transfers": "Transfers",
+    "tactics": "Tactics",
+    "analytics": "Analytics",
+    "finances": "Finances",
+    "scouting": "Scouting",
+    "saveAnalyse": "Save analysis",
+    "settings": "Settings"
+  },
+  "club": {
+    "name": "Northbridge FC",
+    "competition": "Premier League",
+    "manager": "Niclas Krieck",
+    "managerShort": "Niclas",
+    "seasonLabel": "Season",
+    "leagueLine": "{{competition}} · #{{position}}"
+  },
+  "currentSave": {
+    "sectionAria": "Current save",
+    "noSave": "No save loaded",
+    "loading": "Loading save…",
+    "detectingClub": "Detecting club data",
+    "detectingCompetition": "Detecting league…",
+    "readingCompetitionDb": "Reading competition database…",
+    "identityProgress": "{{progress}}% · {{scanned}} / {{total}} frames",
+    "clubUnknown": "Club not identified",
+    "competitionById": "Competition {{id}}",
+    "competitionUnknown": "Competition not identified",
+    "seasonLine": "Season {{season}}",
+    "saveFile": "Save: {{file}}",
+    "inGameDate": "Date: {{date}}",
+    "possibly": "Possibly detected: {{value}}",
+    "devTitle": "Current club",
+    "devManager": "Manager",
+    "devNameSource": "name from {{source}}",
+    "devClub": "Club",
+    "devCompetition": "Competition",
+    "devEvidence": "Evidence",
+    "unknownId": "unknown"
+  },
+  "topnav": {
+    "subtitle": "Decision surface for {{club}} · {{manager}}",
+    "searchPlaceholder": "Search players, tactics, reports…",
+    "searchAria": "Search",
+    "notifications": "Notifications",
+    "askScoutiq": "Ask ScoutIQ",
+    "role": "Manager",
+    "menu": {
+      "profile": "My profile",
+      "signOut": "Sign out"
+    }
+  },
+  "common": {
+    "priority": {
+      "high": "High priority",
+      "medium": "Medium priority",
+      "low": "Low priority"
+    },
+    "viewAll": "View all",
+    "difficulty": "Difficulty {{level}} of 5"
+  },
+  "cloud": {
+    "statusLabel": {
+      "synced": "Synced",
+      "syncing": "Syncing",
+      "offline": "Offline",
+      "error": "Error",
+      "unsigned": "Not signed in",
+      "schemaMissing": "Tables missing",
+      "rlsDenied": "Permission denied"
+    },
+    "status": {
+      "offline": "No network connection.",
+      "localOnly": "Local only — cloud sync is inactive.",
+      "synced": "Cloud sync completed successfully.",
+      "error": "Cloud sync failed.",
+      "unsigned": "Sign in to use cloud sync.",
+      "notConfigured": "Supabase sync is not configured yet.",
+      "schemaMissing": "Cloud tables are missing — run supabase/cloud_sync.sql in the Supabase SQL Editor.",
+      "rlsDenied": "Permission denied (row level security)."
+    },
+    "indicatorTitle": "Cloud status: {{status}}",
+    "indicatorTitleWithTime": "Cloud status: {{status}} · Last: {{time}}",
+    "lastSynced": "Last synced: {{time}}",
+    "neverSynced": "Not synced yet.",
+    "description": "Cloud sync is active. Your ScoutIQ data is securely synchronized with your account. Full Football Manager save files are not uploaded yet.",
+    "domains": {
+      "profile": "User profile",
+      "settings": "App settings",
+      "saveMetadata": "Save metadata",
+      "analysisHistory": "Analysis history",
+      "transferShortlist": "Transfer shortlist"
+    },
+    "pending": "Ready",
+    "syncNow": "Sync now",
+    "syncing": "Syncing…",
+    "mode": {
+      "local": "Local",
+      "cloud": "Cloud",
+      "offline": "Offline",
+      "supabase": "Cloud"
+    },
+    "notes": {
+      "localSource": "localStorage is used only as an offline cache.",
+      "noSaveUpload": "Full Football Manager save files are not uploaded yet — metadata only.",
+      "conflicts": "Conflicts resolve via updated_at timestamps (newer wins)."
+    },
+    "connection": {
+      "title": "Supabase connection",
+      "subtitle": "Checks configuration, auth API, session and profile — no sync or uploads.",
+      "test": "Test connection",
+      "testing": "Testing…",
+      "summaryOk": "Connection ok",
+      "summaryError": "Connection failed",
+      "checkedAt": "Checked: {{time}}",
+      "labels": {
+        "config": "Configuration",
+        "auth": "Auth API",
+        "session": "Session",
+        "profile": "Profile"
+      },
+      "status": {
+        "ok": "OK",
+        "warn": "Note",
+        "error": "Error",
+        "skipped": "Skipped"
+      },
+      "checks": {
+        "configMissing": "VITE_SUPABASE_URL or VITE_SUPABASE_PUBLISHABLE_KEY is missing.",
+        "configOk": "Env variables are set.",
+        "authOk": "Supabase Auth is reachable.",
+        "authError": "Auth API error: {{detail}}",
+        "networkError": "Network error: {{detail}}",
+        "sessionOk": "Signed in as {{email}}.",
+        "sessionSignedOut": "No active session — please sign in.",
+        "sessionError": "Session error: {{detail}}",
+        "profileOk": "Profile loaded: {{name}}.",
+        "profileMissing": "No profile row — check the profiles table or save again.",
+        "profileNeedsSignIn": "Profile is checked only after sign-in.",
+        "skipped": "Not checked."
+      }
+    }
+  },
+  "dashboard": {
+    "statsAria": "Key statistics",
+    "recommendations": {
+      "title": "AI Recommendations",
+      "subtitle": "High-leverage actions ranked for this week"
+    },
+    "fixtures": {
+      "title": "Upcoming Fixtures",
+      "subtitle": "Difficulty-adjusted schedule",
+      "nextFour": "Next 4",
+      "difficulty": {
+        "elite": "Elite",
+        "hard": "Hard",
+        "medium": "Medium",
+        "soft": "Soft"
+      }
+    },
+    "performers": {
+      "title": "Top Performers",
+      "subtitle": "Last five matches",
+      "inForm": "In form"
+    },
+    "activity": {
+      "title": "Recent Activity",
+      "subtitle": "Scouting, training and finance signals",
+      "openInbox": "Open inbox"
+    },
+    "stats": {
+      "squad-value": {
+        "label": "Squad Value",
+        "value": "€184.2M",
+        "delta": "+4.8%",
+        "caption": "vs last month"
+      },
+      "form": {
+        "label": "Current Form",
+        "value": "W W D W L",
+        "delta": "+0.4",
+        "caption": "avg rating 7.21"
+      },
+      "budget": {
+        "label": "Transfer Budget",
+        "value": "€42.5M",
+        "delta": "−€3.2M",
+        "caption": "wage room €180K/w"
+      },
+      "scout": {
+        "label": "Scout Score",
+        "value": "91",
+        "delta": "+6",
+        "caption": "elite pipeline health"
+      }
+    },
+    "recs": {
+      "r1": {
+        "title": "Secure left-back cover before deadline",
+        "description": "Injury risk on Álvarez is elevated. Target a progressive LB under 25 with strong stamina and crossing.",
+        "category": "Transfer",
+        "impact": "+12 depth score",
+        "meta": "Deadline in 9 days"
+      },
+      "r2": {
+        "title": "Shift to 4-2-3-1 vs high press sides",
+        "description": "Your double pivot reduces turnovers in the middle third by 18% against pressing opponents.",
+        "category": "Tactics",
+        "impact": "+0.28 xG diff",
+        "meta": "Next: City away"
+      },
+      "r3": {
+        "title": "Offer new deal to Kovačević",
+        "description": "Contract expires in 14 months. Market value rising fast — lock in now to avoid a free exit.",
+        "category": "Contract",
+        "impact": "−€8M risk",
+        "meta": "Agent receptive"
+      },
+      "r4": {
+        "title": "Scout LaLiga U21 full-backs",
+        "description": "Three shortlisted profiles match your playing style and wage structure within budget.",
+        "category": "Scouting",
+        "impact": "3 matches found",
+        "meta": "Report ready"
+      }
+    },
+    "fixtureItems": {
+      "f1": {
+        "opponent": "Manchester City",
+        "competition": "Premier League",
+        "date": "Sun · 16:30"
+      },
+      "f2": {
+        "opponent": "Brighton",
+        "competition": "Premier League",
+        "date": "Wed · 20:00"
+      },
+      "f3": {
+        "opponent": "Real Sociedad",
+        "competition": "Europa League",
+        "date": "Thu · 18:45"
+      },
+      "f4": {
+        "opponent": "Fulham",
+        "competition": "Premier League",
+        "date": "Sat · 15:00"
+      }
+    },
+    "performerItems": {
+      "p1": {
+        "name": "Luka Kovačević",
+        "role": "Creator"
+      },
+      "p2": {
+        "name": "Noah Ellison",
+        "role": "Finisher"
+      },
+      "p3": {
+        "name": "Mateo Álvarez",
+        "role": "Progressor"
+      },
+      "p4": {
+        "name": "Jonas Berg",
+        "role": "Anchor"
+      }
+    },
+    "activityItems": {
+      "a1": {
+        "title": "Scouting report complete",
+        "detail": "João Ribeiro · Porto · CM",
+        "time": "12m ago"
+      },
+      "a2": {
+        "title": "Training load alert",
+        "detail": "Álvarez above threshold",
+        "time": "1h ago"
+      },
+      "a3": {
+        "title": "Wage projection updated",
+        "detail": "2027 budget model refreshed",
+        "time": "3h ago"
+      },
+      "a4": {
+        "title": "Opponent analysis ready",
+        "detail": "City · press traps & wide overloads",
+        "time": "Yesterday"
+      }
+    }
+  },
+  "save": {
+    "state": {
+      "none": "No save loaded",
+      "loading": "Loading…",
+      "loaded": "Save loaded",
+      "error": "Failed to load"
+    },
+    "badgeTitleIdle": "Open FM save (File → Open FM save…)",
+    "badgeTitleLoaded": "{{file}} · {{size}} · modified {{modified}}",
+    "errors": {
+      "cancelled": "Cancelled.",
+      "desktopOnly": "File menu and save opening are available in the desktop app.",
+      "readFailed": "Could not open the file",
+      "writeFailed": "Could not save ScoutIQ project.",
+      "unsupported": "Unsupported file format",
+      "inspectFailed": "Could not analyse the save",
+      "inspectWarnings": "Save loaded with warnings.",
+      "cancelledAnalysis": "Analysis was cancelled",
+      "unknown": "Unknown file access error."
+    }
+  },
+  "fmParser": {
+    "eyebrow": "Developer · Reverse Engineering",
+    "title": "FM26 Parser",
+    "subtitle": "Generic container/block analysis for arbitrary FM26 saves. No invented metadata.",
+    "status": "Parser status: Reverse Engineering / Developer Build",
+    "open": "Open FM save…",
+    "reparse": "Analyse again",
+    "busy": "Analysis running…",
+    "cancel": "Cancel analysis",
+    "emptyTitle": "No save loaded",
+    "emptyBody": "Open a local .fm save. Cloud files must be available offline.",
+    "calibratingField": "Parser is being calibrated",
+    "saveTitle": "Save",
+    "fileName": "File name",
+    "fileSize": "File size",
+    "containerFormat": "Container format",
+    "analysisStatus": "Analysis status",
+    "blocksTitle": "Data blocks",
+    "blockCandidates": "Candidates",
+    "blockValidated": "Validated",
+    "blockDecompressed": "Decompressed",
+    "blockErrors": "Errors",
+    "blockProgress": "Block {{current}} / {{total}}",
+    "structuresTitle": "Structures",
+    "stringTables": "String tables",
+    "recordTables": "Record tables",
+    "indexTables": "Index tables",
+    "internalFiles": "Internal files",
+    "unknownStructures": "Unknown structures",
+    "stringsIndexed": "Strings indexed",
+    "waitingParse": "Analysis running…",
+    "exportDiag": "Export diagnostic JSON",
+    "probeTitle": "Search known value",
+    "probeType": "Type",
+    "probeValue": "Search value",
+    "probePlaceholder": "Enter any known value",
+    "probeFree": "Free text",
+    "probePlayer": "Player",
+    "probeRun": "Search",
+    "probeHits": "{{count}} hits",
+    "blocksSearched": "{{count}} blocks searched",
+    "colValue": "Value",
+    "colBlock": "Block",
+    "colOffset": "Offset",
+    "colEncoding": "Encoding",
+    "colContext": "Context",
+    "showContext": "Hex / neighbors",
+    "nearbyStrings": "Nearby strings",
+    "perfTitle": "Performance",
+    "parseDuration": "Duration",
+    "mbPerS": "MB/s",
+    "bytesProcessed": "Bytes processed",
+    "decompressedBytes": "Decompressed bytes",
+    "cacheHit": "Cache",
+    "yes": "Yes",
+    "no": "No",
+    "unknownError": "Unknown parser error.",
+    "devOnlyTitle": "Developer mode only",
+    "devOnlyBody": "The FM26 parser is an internal reverse-engineering tool. Enable developer mode in Settings."
+  },
+  "saveAnalyse": {
+    "eyebrow": "Internal · Reverse engineering",
+    "title": "Save analysis",
+    "subtitle": "Temporary debug panel for FM26 saves. Metadata and signatures only — no player data.",
+    "open": "Open FM save…",
+    "reinspect": "Analyse again",
+    "analysing": "Analysing…",
+    "analysingTitle": "Save is being analysed",
+    "analysingDescription": "{{file}} — staged background analysis (read-only, original untouched).",
+    "cancel": "Cancel",
+    "progressLabel": "{{progress}} %",
+    "elapsed": "Elapsed: {{seconds}} s",
+    "bytesScanned": "{{scanned}} / {{total}} read",
+    "dismissError": "Dismiss",
+    "empty": {
+      "title": "No save analysed",
+      "description": "Open a .fm save via File → Open FM save… or the button on the right. The original file stays untouched (read-only)."
+    },
+    "sections": {
+      "metadata": "Detected save data",
+      "file": "File",
+      "signatures": "Signatures",
+      "header": "Header (first 512 bytes)",
+      "strings": "Readable string samples",
+      "diagnostics": "Timing diagnostics"
+    },
+    "diagnostics": {
+      "fileSize": "File size",
+      "bytesScanned": "Bytes scanned",
+      "scanTime": "Scan time",
+      "readSpeed": "Read speed",
+      "stage": "Last stage",
+      "chunkSize": "Chunk size",
+      "stringSamples": "String samples",
+      "zstdFrames": "Zstd frames"
+    },
+    "metadata": {
+      "manager": "Manager",
+      "club": "Club",
+      "clubId": "Club ID",
+      "date": "Date",
+      "season": "Season",
+      "competition": "Competition",
+      "unknown": "Not detected",
+      "uncertain": "Not reliably detected",
+      "pending": "Extracting metadata…",
+      "evidenceTitle": "Technical evidence (developer)",
+      "noEvidence": "No evidence.",
+      "notes": "Analysis notes",
+      "confidence": {
+        "confirmed": "confirmed",
+        "likely": "likely",
+        "uncertain": "uncertain",
+        "unknown": "unknown"
+      }
+    },
+    "forensic": {
+      "title": "Forensics / Developer",
+      "subtitle": "String catalog, compression, entropy map and known-value probe — read-only, no invented metadata.",
+      "logTitle": "Analysis log",
+      "encAscii": "ASCII strings",
+      "encUtf8": "UTF-8 strings",
+      "encUtf16Le": "UTF-16 LE",
+      "encUtf16Be": "UTF-16 BE",
+      "zstdOk": "Zstd decompressed",
+      "zstdBytes": "Decompressed bytes",
+      "promising": "Promising offsets",
+      "probeTitle": "Search known value",
+      "probeType": "Type",
+      "probeValue": "Search value",
+      "probeFree": "Free text",
+      "probeRun": "Search",
+      "probeRunning": "Searching…",
+      "probeFailed": "Search failed",
+      "probeHits": "{{count}} hits",
+      "nearbyStrings": "Nearby strings",
+      "catalogTitle": "String catalog",
+      "filterPlaceholder": "Filter (text or offset)…",
+      "allEncodings": "All encodings",
+      "allSources": "All sources",
+      "catalogCount": "{{shown}} of {{total}} entries",
+      "before": "Context before",
+      "after": "Context after",
+      "patternsTitle": "Repeated patterns",
+      "blocksTitle": "Compressed blocks",
+      "entropyTitle": "Entropy map (scan window)"
+    },
+    "fields": {
+      "fileName": "File",
+      "filePath": "Path",
+      "fileSize": "Size",
+      "compression": "Detected compression",
+      "zstdFrames": "Zstd frames found"
+    },
+    "noSignatures": "No signatures detected.",
+    "noStrings": "No readable strings found in the scanned region."
+  },
+  "import": {
+    "formats": {
+      "csv": "CSV",
+      "json": "JSON",
+      "fmSave": "Football Manager save"
+    },
+    "errors": {
+      "cancelled": "Import cancelled.",
+      "unsupported_format": "This file format is not supported yet. Please use CSV or JSON.",
+      "empty_file": "The selected file is empty.",
+      "invalid_json": "The JSON file is invalid or corrupted.",
+      "invalid_csv": "The CSV file is invalid. Expect a header row and player rows.",
+      "missing_players": "No players were found in the file.",
+      "invalid_player_row": "No valid player rows found. Name and age are required.",
+      "read_failed": "The file could not be read.",
+      "not_implemented": "Football Manager save import will arrive later.",
+      "unknown": "An unknown error occurred during import."
+    }
+  },
+  "squad": {
+    "title": "Squad",
+    "subtitle": "Import player data from CSV or JSON and analyse your squad.",
+    "import": "Import data",
+    "importing": "Importing…",
+    "clear": "Clear squad",
+    "dismissError": "Dismiss",
+    "searchPlaceholder": "Search players, position or nation…",
+    "filterPosition": "Position",
+    "allPositions": "All positions",
+    "resultCount": "{{count}} players",
+    "loaded": "{{club}} · {{count}} players · {{file}}",
+    "empty": {
+      "title": "No squad imported yet",
+      "description": "Import a CSV or JSON file with player data. Football Manager save files will follow later."
+    },
+    "noResults": {
+      "title": "No matches",
+      "description": "Adjust search or position filter."
+    },
+    "table": {
+      "name": "Name",
+      "position": "Position",
+      "age": "Age",
+      "nationality": "Nation",
+      "marketValue": "Market value",
+      "wage": "Wage",
+      "contractExpiry": "Contract until",
+      "squadStatus": "Status"
+    },
+    "status": {
+      "first_team": "First team",
+      "rotation": "Rotation",
+      "backup": "Backup",
+      "youth": "Youth",
+      "loan": "Loan",
+      "listed": "Transfer listed",
+      "unknown": "Unknown"
+    }
+  },
+  "pages": {
+    "squad": {
+      "blurb": "Depth charts, fitness, roles and contract risk — wired next."
+    },
+    "transfers": {
+      "blurb": "Shortlists, valuation models and deadline board — coming soon."
+    },
+    "tactics": {
+      "blurb": "Shape labs, match plans and opponent press maps — coming soon."
+    },
+    "analytics": {
+      "blurb": "xG trends, progressive actions and season trajectories — coming soon."
+    },
+    "finances": {
+      "blurb": "Wage structure, FFP runway and budget scenarios — coming soon."
+    },
+    "scouting": {
+      "blurb": "Live reports, attribute fits and watchlist pipeline — coming soon."
+    }
+  },
+  "settings": {
+    "title": "Settings",
+    "subtitle": "Configure app, club and assistant preferences",
+    "account": {
+      "title": "Account",
+      "description": "Your ScoutIQ account via Supabase Auth.",
+      "manage": "Open account",
+      "signOut": "Sign out",
+      "signIn": "Sign in",
+      "signedOut": "You are signed out."
+    },
+    "cloud": {
+      "title": "Cloud",
+      "description": "Cloud sync with your ScoutIQ account via Supabase."
+    },
+    "language": {
+      "title": "Language",
+      "description": "Choose the interface language. Your selection is saved and loaded on the next app start.",
+      "label": "Display language",
+      "hint": "Changes apply immediately across the entire app."
+    },
+    "theme": {
+      "title": "Theme",
+      "description": "Choose the appearance. Dark is the default and fully polished; Light and System are prepared.",
+      "label": "Appearance",
+      "hint": "Currently active: {{resolved}}. Your selection is saved locally.",
+      "resolved": {
+        "dark": "Dark",
+        "light": "Light"
+      },
+      "options": {
+        "dark": {
+          "title": "Dark",
+          "description": "Premium dark mode — default"
+        },
+        "light": {
+          "title": "Light",
+          "description": "Structurally prepared"
+        },
+        "system": {
+          "title": "System",
+          "description": "Follows OS preference"
+        }
+      }
+    },
+    "developer": {
+      "title": "Developer",
+      "description": "Internal reverse-engineering tools (FM26 parser). Leave off for normal use.",
+      "enable": "Developer mode"
+    },
+    "updates": {
+      "title": "Updates",
+      "description": "App version and update status. Automatic updates are prepared but not enabled yet.",
+      "currentVersion": "Current version",
+      "checkButton": "Check for updates",
+      "checking": "Checking…",
+      "statusLabel": "Status",
+      "status": {
+        "idle": "Not checked yet. Run a manual check whenever you like.",
+        "checking": "Looking for available updates…",
+        "upToDate": "You are on the latest version.",
+        "available": "Update available: version {{version}}.",
+        "disabled": "Automatic updates are prepared but not enabled yet.",
+        "notConfigured": "Updater provider is active, but the Tauri updater integration is not configured yet.",
+        "error": "Update check failed: {{detail}}"
+      }
+    },
+    "club": {
+      "title": "Club",
+      "description": "Active save and club context",
+      "clubLabel": "Club",
+      "seasonLabel": "Season",
+      "managerLabel": "Manager"
+    }
+  }
+}

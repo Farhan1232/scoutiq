@@ -1,0 +1,725 @@
+{
+  "app": {
+    "name": "ScoutIQ",
+    "loading": "ScoutIQ wird geladen…"
+  },
+  "auth": {
+    "tagline": "Football Manager Assistant",
+    "working": "Bitte warten…",
+    "orContinueWith": "Später auch möglich mit",
+    "comingSoon": "Demnächst",
+    "oauthPrepared": "Google- und Apple-Login sind vorbereitet und werden mit Supabase aktiviert.",
+    "fields": {
+      "email": "E-Mail",
+      "password": "Passwort",
+      "confirmPassword": "Passwort bestätigen",
+      "displayName": "Name",
+      "language": "Sprache",
+      "plan": "Tarif"
+    },
+    "plans": {
+      "free": "Kostenlos",
+      "pro": "Pro",
+      "elite": "Elite"
+    },
+    "providers": {
+      "email": "E-Mail",
+      "google": "Google",
+      "apple": "Apple"
+    },
+    "login": {
+      "title": "Anmelden",
+      "subtitle": "Melde dich an, um deinen ScoutIQ-Arbeitsbereich fortzusetzen.",
+      "submit": "Anmelden",
+      "forgotPassword": "Passwort vergessen?",
+      "noAccount": "Noch kein Konto?",
+      "createAccount": "Registrieren"
+    },
+    "register": {
+      "title": "Registrieren",
+      "subtitle": "Erstelle dein ScoutIQ-Konto mit E-Mail und Passwort.",
+      "submit": "Registrieren",
+      "passwordHint": "Mindestens 8 Zeichen",
+      "hasAccount": "Bereits registriert?",
+      "signIn": "Anmelden",
+      "checkEmail": "Konto erstellt. Bestätige deine E-Mail über den Link. Für die Desktop-App: Bestätigung in Supabase deaktivieren oder User manuell bestätigen (Authentication → Users)."
+    },
+    "forgot": {
+      "title": "Passwort vergessen",
+      "subtitle": "Gib deine E-Mail ein. Wenn ein Konto existiert, senden wir einen Reset-Link.",
+      "submit": "Reset-Link senden",
+      "success": "Wenn ein Konto existiert, wurde ein Reset-Link per E-Mail gesendet.",
+      "remembered": "Passwort wieder eingefallen?",
+      "backToLogin": "Zur Anmeldung"
+    },
+    "callback": {
+      "title": "E-Mail-Bestätigung",
+      "subtitle": "ScoutIQ verarbeitet den Link aus deiner E-Mail.",
+      "working": "Bestätigung wird verarbeitet…",
+      "emailConfirmed": "E-Mail bestätigt. Du kannst dich jetzt in ScoutIQ anmelden.",
+      "passwordRecovery": "Link gültig. Du kannst dein Passwort als Nächstes zurücksetzen.",
+      "error": "Der Bestätigungslink konnte nicht verarbeitet werden.",
+      "linkExpired": "Dieser E-Mail-Link ist ungültig oder abgelaufen. Bitte in Supabase die E-Mail manuell bestätigen oder „Confirm email“ für die Entwicklung deaktivieren — danach in ScoutIQ anmelden.",
+      "none": "Kein Bestätigungslink gefunden.",
+      "backToLogin": "Zur Anmeldung"
+    },
+    "account": {
+      "title": "Konto",
+      "subtitle": "Profil, Sprache und Tarif verwalten",
+      "back": "Zurück zu Einstellungen",
+      "profileTitle": "Profil",
+      "profileDescription": "Deine Kontodaten für ScoutIQ.",
+      "methodsTitle": "Anmeldemethoden",
+      "methodsDescription": "E-Mail-Login ist aktiv. Google und Apple folgen später.",
+      "connected": "Verbunden",
+      "futureProviders": "Google- und Apple-Login sind vorbereitet, aber noch nicht aktiviert.",
+      "emailLocked": "E-Mail-Änderungen folgen später.",
+      "save": "Speichern",
+      "saved": "Konto aktualisiert."
+    },
+    "errors": {
+      "invalid_credentials": "E-Mail oder Passwort ist ungültig.",
+      "invalid_email": "Bitte gib eine gültige E-Mail-Adresse ein.",
+      "invalid_name": "Der Name muss zwischen 2 und 60 Zeichen lang sein.",
+      "email_taken": "Für diese E-Mail existiert bereits ein Konto.",
+      "weak_password": "Das Passwort muss mindestens 8 Zeichen haben.",
+      "password_mismatch": "Die Passwörter stimmen nicht überein.",
+      "user_not_found": "Bitte gib eine gültige E-Mail-Adresse ein.",
+      "email_not_confirmed": "Bitte bestätige zuerst deine E-Mail-Adresse.",
+      "email_provider_disabled": "E-Mail-Login ist in Supabase deaktiviert. Aktiviere Authentication → Providers → Email.",
+      "not_configured": "Supabase ist nicht konfiguriert. Setze VITE_SUPABASE_URL und VITE_SUPABASE_PUBLISHABLE_KEY.",
+      "oauth_unavailable": "Dieser Login-Anbieter ist noch nicht aktiviert.",
+      "network": "Netzwerkfehler. Bitte erneut versuchen.",
+      "unknown": "Etwas ist schiefgelaufen. Bitte erneut versuchen."
+    }
+  },
+  "languages": {
+    "de": "Deutsch",
+    "en": "English"
+  },
+  "nav": {
+    "workspace": "Arbeitsbereich",
+    "primary": "Hauptnavigation",
+    "dashboard": "Dashboard",
+    "squad": "Kader",
+    "transfers": "Transfers",
+    "tactics": "Taktik",
+    "analytics": "Analysen",
+    "finances": "Finanzen",
+    "scouting": "Scouting",
+    "saveAnalyse": "Save-Analyse",
+    "settings": "Einstellungen"
+  },
+  "club": {
+    "name": "Northbridge FC",
+    "competition": "Premier League",
+    "manager": "Niclas Krieck",
+    "managerShort": "Niclas",
+    "seasonLabel": "Saison",
+    "leagueLine": "{{competition}} · #{{position}}"
+  },
+  "currentSave": {
+    "sectionAria": "Aktueller Spielstand",
+    "noSave": "Kein Spielstand geladen",
+    "loading": "Spielstand wird geladen …",
+    "detectingClub": "Vereinsdaten werden erkannt",
+    "detectingCompetition": "Liga wird erkannt …",
+    "readingCompetitionDb": "Ligen-Datenbank wird gelesen …",
+    "identityProgress": "{{progress}} % · {{scanned}} / {{total}} Frames",
+    "clubUnknown": "Verein nicht erkannt",
+    "competitionById": "Wettbewerb {{id}}",
+    "competitionUnknown": "Spielklasse nicht erkannt",
+    "seasonLine": "Saison {{season}}",
+    "saveFile": "Spielstand: {{file}}",
+    "inGameDate": "Datum: {{date}}",
+    "possibly": "Möglicherweise erkannt: {{value}}",
+    "devTitle": "Aktueller Verein",
+    "devManager": "Trainer",
+    "devNameSource": "Name aus {{source}}",
+    "devClub": "Verein",
+    "devCompetition": "Liga",
+    "devEvidence": "Evidence",
+    "unknownId": "unknown"
+  },
+  "topnav": {
+    "subtitle": "Entscheidungsfläche für {{club}} · {{manager}}",
+    "searchPlaceholder": "Spieler, Taktik, Berichte suchen…",
+    "searchAria": "Suche",
+    "notifications": "Benachrichtigungen",
+    "askScoutiq": "ScoutIQ fragen",
+    "role": "Trainer",
+    "menu": {
+      "profile": "Mein Profil",
+      "signOut": "Abmelden"
+    }
+  },
+  "common": {
+    "priority": {
+      "high": "Hohe Priorität",
+      "medium": "Mittlere Priorität",
+      "low": "Niedrige Priorität"
+    },
+    "viewAll": "Alle anzeigen",
+    "difficulty": "Schwierigkeit {{level}} von 5"
+  },
+  "cloud": {
+    "statusLabel": {
+      "synced": "Synchronisiert",
+      "syncing": "Synchronisierung läuft",
+      "offline": "Offline",
+      "error": "Fehler",
+      "unsigned": "Nicht angemeldet",
+      "schemaMissing": "Tabellen fehlen",
+      "rlsDenied": "Keine Berechtigung"
+    },
+    "status": {
+      "offline": "Keine Netzwerkverbindung.",
+      "localOnly": "Nur lokal — kein Cloud-Sync aktiv.",
+      "synced": "Cloud-Synchronisierung erfolgreich.",
+      "error": "Cloud-Synchronisierung fehlgeschlagen.",
+      "unsigned": "Melde dich an, um Cloud-Sync zu nutzen.",
+      "notConfigured": "Supabase-Sync ist noch nicht konfiguriert.",
+      "schemaMissing": "Cloud-Tabellen fehlen — bitte supabase/cloud_sync.sql im Supabase SQL Editor ausführen.",
+      "rlsDenied": "Keine Berechtigung (Row Level Security)."
+    },
+    "indicatorTitle": "Cloud-Status: {{status}}",
+    "indicatorTitleWithTime": "Cloud-Status: {{status}} · Zuletzt: {{time}}",
+    "lastSynced": "Zuletzt synchronisiert: {{time}}",
+    "neverSynced": "Noch nicht synchronisiert.",
+    "description": "Cloud-Synchronisierung ist aktiv. Deine ScoutIQ-Daten werden sicher mit deinem Konto synchronisiert. Vollständige Football-Manager-Spielstände werden derzeit nicht hochgeladen.",
+    "domains": {
+      "profile": "Benutzerprofil",
+      "settings": "App-Einstellungen",
+      "saveMetadata": "Save-Metadaten",
+      "analysisHistory": "Analyse-Historie",
+      "transferShortlist": "Transfer-Shortlist"
+    },
+    "pending": "Bereit",
+    "syncNow": "Jetzt synchronisieren",
+    "syncing": "Synchronisierung läuft…",
+    "mode": {
+      "local": "Lokal",
+      "cloud": "Cloud",
+      "offline": "Offline",
+      "supabase": "Cloud"
+    },
+    "notes": {
+      "localSource": "localStorage dient nur als Offline-Cache.",
+      "noSaveUpload": "Vollständige Football-Manager-Save-Dateien werden noch nicht hochgeladen — nur Metadaten.",
+      "conflicts": "Konflikte werden über updated_at-Zeitstempel aufgelöst (neuerer Stand gewinnt)."
+    },
+    "connection": {
+      "title": "Supabase-Verbindung",
+      "subtitle": "Prüft Konfiguration, Auth-API, Session und Profil — ohne Sync oder Uploads.",
+      "test": "Verbindung testen",
+      "testing": "Teste…",
+      "summaryOk": "Verbindung ok",
+      "summaryError": "Verbindung fehlgeschlagen",
+      "checkedAt": "Geprüft: {{time}}",
+      "labels": {
+        "config": "Konfiguration",
+        "auth": "Auth-API",
+        "session": "Session",
+        "profile": "Profil"
+      },
+      "status": {
+        "ok": "OK",
+        "warn": "Hinweis",
+        "error": "Fehler",
+        "skipped": "Übersprungen"
+      },
+      "checks": {
+        "configMissing": "VITE_SUPABASE_URL oder VITE_SUPABASE_PUBLISHABLE_KEY fehlt.",
+        "configOk": "Env-Variablen sind gesetzt.",
+        "authOk": "Supabase Auth ist erreichbar.",
+        "authError": "Auth-API-Fehler: {{detail}}",
+        "networkError": "Netzwerkfehler: {{detail}}",
+        "sessionOk": "Angemeldet als {{email}}.",
+        "sessionSignedOut": "Keine aktive Session — bitte anmelden.",
+        "sessionError": "Session-Fehler: {{detail}}",
+        "profileOk": "Profil geladen: {{name}}.",
+        "profileMissing": "Kein Profil-Eintrag — profiles-Tabelle prüfen oder erneut speichern.",
+        "profileNeedsSignIn": "Profil wird erst nach Anmeldung geprüft.",
+        "skipped": "Nicht geprüft."
+      }
+    }
+  },
+  "dashboard": {
+    "statsAria": "Kennzahlen",
+    "recommendations": {
+      "title": "KI-Empfehlungen",
+      "subtitle": "Hebelwirkungen für diese Woche, priorisiert"
+    },
+    "fixtures": {
+      "title": "Kommende Spiele",
+      "subtitle": "Schwierigkeitsangepasster Spielplan",
+      "nextFour": "Nächste 4",
+      "difficulty": {
+        "elite": "Elite",
+        "hard": "Schwer",
+        "medium": "Mittel",
+        "soft": "Leicht"
+      }
+    },
+    "performers": {
+      "title": "Top-Performer",
+      "subtitle": "Letzte fünf Spiele",
+      "inForm": "In Form"
+    },
+    "activity": {
+      "title": "Letzte Aktivität",
+      "subtitle": "Scouting-, Trainings- und Finanzsignale",
+      "openInbox": "Posteingang öffnen"
+    },
+    "stats": {
+      "squad-value": {
+        "label": "Kaderwert",
+        "value": "184,2 Mio. €",
+        "delta": "+4,8 %",
+        "caption": "ggü. Vormonat"
+      },
+      "form": {
+        "label": "Aktuelle Form",
+        "value": "S S U S N",
+        "delta": "+0,4",
+        "caption": "Ø-Note 7,21"
+      },
+      "budget": {
+        "label": "Transferbudget",
+        "value": "42,5 Mio. €",
+        "delta": "−3,2 Mio. €",
+        "caption": "Gehaltsraum 180k €/W"
+      },
+      "scout": {
+        "label": "Scout-Score",
+        "value": "91",
+        "delta": "+6",
+        "caption": "Starke Pipeline-Gesundheit"
+      }
+    },
+    "recs": {
+      "r1": {
+        "title": "Linksverteidiger-Absicherung vor Deadline",
+        "description": "Verletzungsrisiko bei Álvarez ist erhöht. Ziel: progressiver LV unter 25 mit starker Ausdauer und Flanken.",
+        "category": "Transfer",
+        "impact": "+12 Tiefe-Score",
+        "meta": "Deadline in 9 Tagen"
+      },
+      "r2": {
+        "title": "Auf 4-2-3-1 gegen Pressing-Teams wechseln",
+        "description": "Dein Doppelsechs reduziert Ballverluste im Mittelfeld gegen Pressinggegner um 18 %.",
+        "category": "Taktik",
+        "impact": "+0,28 xG-Diff.",
+        "meta": "Nächstes Spiel: City auswärts"
+      },
+      "r3": {
+        "title": "Neuen Vertrag für Kovačević anbieten",
+        "description": "Vertrag endet in 14 Monaten. Marktwert steigt schnell — jetzt sichern, um einen Abgang ablösefrei zu vermeiden.",
+        "category": "Vertrag",
+        "impact": "−8 Mio. € Risiko",
+        "meta": "Berater gesprächsbereit"
+      },
+      "r4": {
+        "title": "LaLiga-U21-Außenverteidiger scouten",
+        "description": "Drei Shortlist-Profile passen zu Spielstil und Gehaltsstruktur innerhalb des Budgets.",
+        "category": "Scouting",
+        "impact": "3 Treffer gefunden",
+        "meta": "Bericht bereit"
+      }
+    },
+    "fixtureItems": {
+      "f1": {
+        "opponent": "Manchester City",
+        "competition": "Premier League",
+        "date": "So · 16:30"
+      },
+      "f2": {
+        "opponent": "Brighton",
+        "competition": "Premier League",
+        "date": "Mi · 20:00"
+      },
+      "f3": {
+        "opponent": "Real Sociedad",
+        "competition": "Europa League",
+        "date": "Do · 18:45"
+      },
+      "f4": {
+        "opponent": "Fulham",
+        "competition": "Premier League",
+        "date": "Sa · 15:00"
+      }
+    },
+    "performerItems": {
+      "p1": {
+        "name": "Luka Kovačević",
+        "role": "Kreativ"
+      },
+      "p2": {
+        "name": "Noah Ellison",
+        "role": "Vollstrecker"
+      },
+      "p3": {
+        "name": "Mateo Álvarez",
+        "role": "Progressor"
+      },
+      "p4": {
+        "name": "Jonas Berg",
+        "role": "Anker"
+      }
+    },
+    "activityItems": {
+      "a1": {
+        "title": "Scoutingbericht fertig",
+        "detail": "João Ribeiro · Porto · ZM",
+        "time": "vor 12 Min."
+      },
+      "a2": {
+        "title": "Trainingsbelastungs-Warnung",
+        "detail": "Álvarez über Schwellenwert",
+        "time": "vor 1 Std."
+      },
+      "a3": {
+        "title": "Gehaltsprojektion aktualisiert",
+        "detail": "Budgetmodell 2027 aktualisiert",
+        "time": "vor 3 Std."
+      },
+      "a4": {
+        "title": "Gegneranalyse bereit",
+        "detail": "City · Pressfallen & Außenüberladungen",
+        "time": "Gestern"
+      }
+    }
+  },
+  "save": {
+    "state": {
+      "none": "Kein Spielstand geladen",
+      "loading": "Wird geladen …",
+      "loaded": "Spielstand geladen",
+      "error": "Fehler beim Laden"
+    },
+    "badgeTitleIdle": "FM-Spielstand öffnen (Datei → FM-Spielstand öffnen …)",
+    "badgeTitleLoaded": "{{file}} · {{size}} · geändert {{modified}}",
+    "errors": {
+      "cancelled": "Vorgang abgebrochen.",
+      "desktopOnly": "Dateimenü und Spielstand-Öffnen sind in der Desktop-App verfügbar.",
+      "readFailed": "Datei konnte nicht geöffnet werden",
+      "writeFailed": "ScoutIQ-Projekt konnte nicht gespeichert werden.",
+      "unsupported": "Nicht unterstütztes Dateiformat",
+      "inspectFailed": "Spielstand konnte nicht analysiert werden",
+      "inspectWarnings": "Spielstand geladen, aber mit Hinweisen.",
+      "cancelledAnalysis": "Analyse wurde abgebrochen",
+      "unknown": "Unbekannter Fehler beim Dateizugriff."
+    }
+  },
+  "fmParser": {
+    "eyebrow": "Developer · Reverse Engineering",
+    "title": "FM26 Parser",
+    "subtitle": "Generische Container-/Block-Analyse für beliebige FM26-Spielstände. Keine erfundenen Metadaten.",
+    "status": "Parser-Status: Reverse Engineering / Developer Build",
+    "open": "FM-Spielstand öffnen …",
+    "reparse": "Erneut analysieren",
+    "busy": "Analyse läuft …",
+    "cancel": "Analyse abbrechen",
+    "emptyTitle": "Kein Spielstand geladen",
+    "emptyBody": "Öffne einen lokalen .fm-Spielstand. Cloud-Dateien müssen lokal verfügbar sein.",
+    "calibratingField": "Parser wird kalibriert",
+    "saveTitle": "Spielstand",
+    "fileName": "Dateiname",
+    "fileSize": "Dateigröße",
+    "containerFormat": "Containerformat",
+    "analysisStatus": "Analyse-Status",
+    "blocksTitle": "Datenblöcke",
+    "blockCandidates": "Kandidaten",
+    "blockValidated": "Validiert",
+    "blockDecompressed": "Entpackt",
+    "blockErrors": "Fehler",
+    "blockProgress": "Block {{current}} / {{total}}",
+    "structuresTitle": "Strukturen",
+    "stringTables": "String Tables",
+    "recordTables": "Record Tables",
+    "indexTables": "Index Tables",
+    "internalFiles": "Internal Files",
+    "unknownStructures": "Unknown Structures",
+    "stringsIndexed": "Strings indiziert",
+    "waitingParse": "Analyse läuft …",
+    "exportDiag": "Diagnose-JSON exportieren",
+    "probeTitle": "Bekannten Wert suchen",
+    "probeType": "Typ",
+    "probeValue": "Suchwert",
+    "probePlaceholder": "Beliebigen bekannten Wert eingeben",
+    "probeFree": "Freitext",
+    "probePlayer": "Spieler",
+    "probeRun": "Suchen",
+    "probeHits": "{{count}} Treffer",
+    "blocksSearched": "{{count}} Blöcke durchsucht",
+    "colValue": "Wert",
+    "colBlock": "Block",
+    "colOffset": "Offset",
+    "colEncoding": "Encoding",
+    "colContext": "Kontext",
+    "showContext": "Hex / Nachbarn",
+    "nearbyStrings": "Nahe Strings",
+    "perfTitle": "Performance",
+    "parseDuration": "Dauer",
+    "mbPerS": "MB/s",
+    "bytesProcessed": "Verarbeitete Bytes",
+    "decompressedBytes": "Entpackte Bytes",
+    "cacheHit": "Cache",
+    "yes": "Ja",
+    "no": "Nein",
+    "unknownError": "Unbekannter Parserfehler.",
+    "devOnlyTitle": "Nur im Entwicklermodus",
+    "devOnlyBody": "Der FM26-Parser ist ein internes Reverse-Engineering-Werkzeug. Aktiviere den Entwicklermodus unter Einstellungen."
+  },
+  "saveAnalyse": {
+    "eyebrow": "Intern · Reverse Engineering",
+    "title": "Save-Analyse",
+    "subtitle": "Temporäres Debug-Panel für FM26-Spielstände. Nur Metadaten und Signaturen — keine Spielerdaten.",
+    "open": "FM-Spielstand öffnen …",
+    "reinspect": "Erneut analysieren",
+    "analysing": "Analyse läuft …",
+    "analysingTitle": "Spielstand wird analysiert",
+    "analysingDescription": "{{file}} — gestufte Analyse im Hintergrund (nur Lesen, Original bleibt unverändert).",
+    "cancel": "Abbrechen",
+    "progressLabel": "{{progress}} %",
+    "elapsed": "Laufzeit: {{seconds}} s",
+    "bytesScanned": "{{scanned}} / {{total}} gelesen",
+    "dismissError": "Schließen",
+    "empty": {
+      "title": "Kein Spielstand analysiert",
+      "description": "Öffne einen .fm-Spielstand über Datei → FM-Spielstand öffnen … oder den Button rechts. Die Originaldatei bleibt unverändert (nur Lesen)."
+    },
+    "sections": {
+      "metadata": "Erkannte Spielstanddaten",
+      "file": "Datei",
+      "signatures": "Signaturen",
+      "header": "Header (erste 512 Bytes)",
+      "strings": "Beispiel lesbarer Strings",
+      "diagnostics": "Timing-Diagnostik"
+    },
+    "diagnostics": {
+      "fileSize": "Dateigröße",
+      "bytesScanned": "Bytes gescannt",
+      "scanTime": "Scan-Zeit",
+      "readSpeed": "Lesegeschwindigkeit",
+      "stage": "Letzte Stufe",
+      "chunkSize": "Chunk-Größe",
+      "stringSamples": "String-Samples",
+      "zstdFrames": "Zstd-Frames"
+    },
+    "metadata": {
+      "manager": "Manager",
+      "club": "Verein",
+      "clubId": "Vereins-ID",
+      "date": "Datum",
+      "season": "Saison",
+      "competition": "Wettbewerb",
+      "unknown": "Nicht erkannt",
+      "uncertain": "Nicht sicher erkannt",
+      "pending": "Metadaten werden extrahiert …",
+      "evidenceTitle": "Technische Evidenz (Developer)",
+      "noEvidence": "Keine Evidenz.",
+      "notes": "Analyse-Notizen",
+      "confidence": {
+        "confirmed": "bestätigt",
+        "likely": "wahrscheinlich",
+        "uncertain": "unsicher",
+        "unknown": "unbekannt"
+      }
+    },
+    "forensic": {
+      "title": "Forensik / Developer",
+      "subtitle": "String-Katalog, Kompression, Entropy-Karte und Bekannten-Wert-Suche — nur Lesen, keine erfundenen Metadaten.",
+      "logTitle": "Analyse-Log",
+      "encAscii": "ASCII-Strings",
+      "encUtf8": "UTF-8-Strings",
+      "encUtf16Le": "UTF-16 LE",
+      "encUtf16Be": "UTF-16 BE",
+      "zstdOk": "Zstd dekomprimiert",
+      "zstdBytes": "Dekomprimierte Bytes",
+      "promising": "Vielversprechende Offsets",
+      "probeTitle": "Bekannten Wert suchen",
+      "probeType": "Typ",
+      "probeValue": "Suchwert",
+      "probeFree": "Freitext",
+      "probeRun": "Suchen",
+      "probeRunning": "Suche läuft …",
+      "probeFailed": "Suche fehlgeschlagen",
+      "probeHits": "{{count}} Treffer",
+      "nearbyStrings": "Nahe Strings",
+      "catalogTitle": "String-Katalog",
+      "filterPlaceholder": "Filter (Text oder Offset)…",
+      "allEncodings": "Alle Encodings",
+      "allSources": "Alle Quellen",
+      "catalogCount": "{{shown}} von {{total}} Einträgen",
+      "before": "Kontext davor",
+      "after": "Kontext danach",
+      "patternsTitle": "Wiederholte Muster",
+      "blocksTitle": "Komprimierte Blöcke",
+      "entropyTitle": "Entropy-Karte (Scanfenster)"
+    },
+    "fields": {
+      "fileName": "Datei",
+      "filePath": "Pfad",
+      "fileSize": "Größe",
+      "compression": "erkannte Kompression",
+      "zstdFrames": "Anzahl gefundener Zstd-Frames"
+    },
+    "noSignatures": "Keine Signaturen erkannt.",
+    "noStrings": "Keine lesbaren Strings in der gescannten Region gefunden."
+  },
+  "import": {
+    "formats": {
+      "csv": "CSV",
+      "json": "JSON",
+      "fmSave": "Football Manager Save"
+    },
+    "errors": {
+      "cancelled": "Import abgebrochen.",
+      "unsupported_format": "Dieses Dateiformat wird noch nicht unterstützt. Bitte CSV oder JSON verwenden.",
+      "empty_file": "Die ausgewählte Datei ist leer.",
+      "invalid_json": "Die JSON-Datei ist ungültig oder beschädigt.",
+      "invalid_csv": "Die CSV-Datei ist ungültig. Erwarte Kopfzeile und Spielerzeilen.",
+      "missing_players": "In der Datei wurden keine Spieler gefunden.",
+      "invalid_player_row": "Keine gültigen Spielerzeilen gefunden. Name und Alter sind Pflichtfelder.",
+      "read_failed": "Die Datei konnte nicht gelesen werden.",
+      "not_implemented": "Football-Manager-Save-Import folgt später.",
+      "unknown": "Beim Import ist ein unbekannter Fehler aufgetreten."
+    }
+  },
+  "squad": {
+    "title": "Kader",
+    "subtitle": "Importiere Spielerdaten aus CSV oder JSON und analysiere deinen Kader.",
+    "import": "Daten importieren",
+    "importing": "Importiere…",
+    "clear": "Kader leeren",
+    "dismissError": "Schließen",
+    "searchPlaceholder": "Spieler, Position oder Nation suchen…",
+    "filterPosition": "Position",
+    "allPositions": "Alle Positionen",
+    "resultCount": "{{count}} Spieler",
+    "loaded": "{{club}} · {{count}} Spieler · {{file}}",
+    "empty": {
+      "title": "Noch kein Kader importiert",
+      "description": "Importiere eine CSV- oder JSON-Datei mit Spielerdaten. Football-Manager-Spielstände folgen später."
+    },
+    "noResults": {
+      "title": "Keine Treffer",
+      "description": "Passe Suche oder Positionsfilter an."
+    },
+    "table": {
+      "name": "Name",
+      "position": "Position",
+      "age": "Alter",
+      "nationality": "Nation",
+      "marketValue": "Marktwert",
+      "wage": "Gehalt",
+      "contractExpiry": "Vertrag bis",
+      "squadStatus": "Status"
+    },
+    "status": {
+      "first_team": "Stammkraft",
+      "rotation": "Rotation",
+      "backup": "Ersatz",
+      "youth": "Jugend",
+      "loan": "Leihe",
+      "listed": "Verkaufsliste",
+      "unknown": "Unbekannt"
+    }
+  },
+  "pages": {
+    "squad": {
+      "blurb": "Tiefencharts, Fitness, Rollen und Vertragsrisiken — als Nächstes."
+    },
+    "transfers": {
+      "blurb": "Shortlists, Bewertungsmodelle und Deadline-Board — demnächst."
+    },
+    "tactics": {
+      "blurb": "Formationen, Matchpläne und Pressingkarten — demnächst."
+    },
+    "analytics": {
+      "blurb": "xG-Trends, progressive Aktionen und Saisonverläufe — demnächst."
+    },
+    "finances": {
+      "blurb": "Gehaltsstruktur, FFP-Spielraum und Budgetszenarien — demnächst."
+    },
+    "scouting": {
+      "blurb": "Live-Berichte, Attribut-Fits und Watchlist-Pipeline — demnächst."
+    }
+  },
+  "settings": {
+    "title": "Einstellungen",
+    "subtitle": "App, Club und Assistent konfigurieren",
+    "account": {
+      "title": "Konto",
+      "description": "Dein ScoutIQ-Konto über Supabase Auth.",
+      "manage": "Konto öffnen",
+      "signOut": "Abmelden",
+      "signIn": "Anmelden",
+      "signedOut": "Du bist abgemeldet."
+    },
+    "cloud": {
+      "title": "Cloud",
+      "description": "Cloud-Synchronisierung mit deinem ScoutIQ-Konto über Supabase."
+    },
+    "language": {
+      "title": "Sprache",
+      "description": "Wähle die Anzeigesprache der Oberfläche. Die Auswahl wird gespeichert und beim nächsten Start geladen.",
+      "label": "Anzeigesprache",
+      "hint": "Änderungen gelten sofort für die gesamte App."
+    },
+    "theme": {
+      "title": "Theme",
+      "description": "Wähle das Erscheinungsbild. Dark ist der Standard und vollständig ausgearbeitet; Light und System sind vorbereitet.",
+      "label": "Erscheinungsbild",
+      "hint": "Aktuell aktiv: {{resolved}}. Die Auswahl wird lokal gespeichert.",
+      "resolved": {
+        "dark": "Dunkel",
+        "light": "Hell"
+      },
+      "options": {
+        "dark": {
+          "title": "Dunkel",
+          "description": "Premium Dark Mode — Standard"
+        },
+        "light": {
+          "title": "Hell",
+          "description": "Strukturell vorbereitet"
+        },
+        "system": {
+          "title": "System",
+          "description": "Folgt dem OS-Theme"
+        }
+      }
+    },
+    "developer": {
+      "title": "Entwickler",
+      "description": "Interne Reverse-Engineering-Werkzeuge (FM26 Parser). Für normale Nutzung ausgeschaltet lassen.",
+      "enable": "Entwicklermodus"
+    },
+    "updates": {
+      "title": "Updates",
+      "description": "App-Version und Update-Status. Automatische Updates sind vorbereitet, aber noch nicht aktiviert.",
+      "currentVersion": "Aktuelle Version",
+      "checkButton": "Nach Updates suchen",
+      "checking": "Suche…",
+      "statusLabel": "Status",
+      "status": {
+        "idle": "Noch nicht geprüft. Starte eine manuelle Suche, wenn du möchtest.",
+        "checking": "Suche nach verfügbaren Updates…",
+        "upToDate": "Du verwendest die neueste Version.",
+        "available": "Update verfügbar: Version {{version}}.",
+        "disabled": "Automatische Updates sind vorbereitet, aber noch nicht aktiviert.",
+        "notConfigured": "Updater-Provider ist aktiv, aber die Tauri-Updater-Integration ist noch nicht konfiguriert.",
+        "error": "Update-Prüfung fehlgeschlagen: {{detail}}"
+      }
+    },
+    "club": {
+      "title": "Club",
+      "description": "Aktiver Save und Vereinskontext",
+      "clubLabel": "Verein",
+      "seasonLabel": "Saison",
+      "managerLabel": "Trainer"
+    }
+  }
+}

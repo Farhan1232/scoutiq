@@ -1,0 +1,4 @@
+[[permission]]
+identifier = "allow-probe-fm-container"
+description = "Erlaubt die Bekannten-Wert-Suche in dekomprimierten FM-Frames (nur Lesen)."
+commands.allow = ["probe_fm_container"]

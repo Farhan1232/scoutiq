@@ -1,0 +1,55 @@
+[package]
+name = "scoutiq"
+version = "0.1.0"
+description = "A Tauri App"
+authors = ["you"]
+edition = "2021"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[lib]
+# The `_lib` suffix may seem redundant but it is necessary
+# to make the lib name unique and wouldn't conflict with the bin name.
+# This seems to be only an issue on Windows, see https://github.com/rust-lang/cargo/issues/8519
+name = "scoutiq_lib"
+crate-type = ["staticlib", "cdylib", "rlib"]
+
+# The desktop application. Declared explicitly so it is never confused with the
+# research binaries below.
+[[bin]]
+name = "scoutiq"
+path = "src/main.rs"
+
+# Developer/QA tools. `required-features` keeps them out of a normal release
+# build: with them compiled in, `tauri build` picked `fm_probe` as the
+# application and shipped a .deb whose /usr/bin held the probe CLI instead of
+# the app. Build them on demand:
+#
+#     cargo run --release --features research-tools --bin fm_probe -- --deep <save.fm>
+[[bin]]
+name = "fm_probe"
+path = "src/bin/fm_probe.rs"
+required-features = ["research-tools"]
+
+[[bin]]
+name = "fm_catalogue"
+path = "src/bin/fm_catalogue.rs"
+required-features = ["research-tools"]
+
+[features]
+default = []
+# Read-only save-inspection tools; not part of the shipped application.
+research-tools = []
+
+[build-dependencies]
+tauri-build = { version = "2", features = [] }
+
+[dependencies]
+tauri = { version = "2", features = [] }
+tauri-plugin-opener = "2"
+serde = { version = "1", features = ["derive"] }
+serde_json = "1"
+tauri-plugin-dialog = "2.7.2"
+tauri-plugin-fs = "2.5.1"
+zstd = "0.13"
+
